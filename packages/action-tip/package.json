@@ -1,0 +1,14 @@
+{
+  "name": "@souche-ui/som-action-tip",
+  "version": "4.5.12",
+  "description": "action-tip",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/action-tip",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ]
+}

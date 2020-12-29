@@ -1,0 +1,76 @@
+/* nav-bar.css */
+@import './base/var.css';
+
+
+@c nav-bar {
+    position: relative;
+    padding: 0 16px;
+    box-sizing: border-box;
+    background-color: var(--white);
+    color: var(--primary);
+    display: flex;
+    height: 44px;
+    align-items: center;
+
+    @m fill {
+        background-color: var(--primary);
+        color: var(--nav-bar-fill-font-color);
+        .som-nav-bar__title {
+            color: var(--nav-bar-fill-font-color);
+        }   
+    }
+
+    @d title {
+        flex: 1;
+        line-height: 44px;
+        height: 44px;
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--text-title);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0 40px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & > span {
+            display: inline-block;
+        }
+    }
+
+    @d left {
+        position: absolute;
+        display: flex;
+        font-size: 0;
+        height: 100%;
+        align-items: center;
+
+        .left-text {
+            font-size: 16px;
+        }
+
+    }
+
+    @d right {
+        position: absolute;
+        right: 16px;
+        display: flex;
+        font-size: 0;
+        height: 100%;
+        align-items: center;
+
+        .right-icon {
+            height: 24px;
+            width: 24px;
+            color: var(--text-caption);
+            margin-left: 20px;
+        }
+
+        .right-text {
+            font-size: 16px;
+        }
+    }
+}

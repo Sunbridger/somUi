@@ -1,0 +1,196 @@
+/* radio.css */
+@import "./base/var.css";
+@import "./list-item.css";
+@import "./mixins/mobile.css";
+@import "./mixins/setonepx.css";
+
+@c radio {
+    transition: var(--all-transition);
+
+    @m button {
+        .som-radio-button {
+            padding: 3px 0;
+            flex: 1;
+        }
+        .som-list-item__ft {
+            width: auto;
+            float: left;
+            display: flex;
+            padding: 0;
+            font-size: 16px;
+            line-height: 18px;
+            margin: 0;
+            position: relative;
+            margin: 12px 0;
+            color: var(--text-title);
+
+            .som-radio-check {
+                width: 100%;
+                height: 100%;
+                z-index: 5;
+                opacity: 0;
+                left: 0;
+            }
+        }
+
+        .som-list-item__ft.som-list-item__ft {
+            margin-right: 20px;
+        }
+
+
+        .som-radio-label {
+            line-height: 18px;
+            margin-left: 4px;
+        }
+
+        @d inner {
+            display: inline-block;
+            border: var(--border-dark);
+            border-radius: var(--radio-button-inner-radius);
+            circle: 18px var(--white);
+            position: relative;
+            cursor: pointer;
+            box-sizing: border-box;
+
+            &::after {
+                circle: 8px var(--white);
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                transition: transform .15s cubic-bezier(.71, -.46, .88, .6);
+            }
+        }
+
+        .som-radio-check:checked:not(:disabled) + .som-radio--button__inner {
+            border-color: var(--primary);
+            background-color: var(--primary);
+            /* &::after {
+                
+            } */
+        }
+
+        &.som-radio--button-disabled {
+            .som-radio--button__inner {
+                background-color: var(--background-block);
+
+                &::after {
+                    background-color: var(--background-block);
+                }
+            }
+
+            .som-radio-check:checked + .som-radio--button__inner {
+                background-color: var(--line-b);
+                &::after {
+                    /* background-color: var(--line-b); */
+                }
+            }
+        }
+
+        &.som-radio__label {
+            @mixin setTapColor rgba(0, 0, 0, 0);
+    
+            &:active {
+                background-color: transparent;
+            }
+        }
+    }
+
+    @d label {
+        @mixin setTapColor rgba(0, 0, 0, 0);
+
+        &:active {
+            background-color: rgba(0, 0, 0, .1);;
+        }
+    }
+
+    @d bd {
+        padding: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 16px;
+        
+
+        .som-radio-label {
+            word-wrap: normal;
+            word-wrap: break-word;
+            display: inline-block;
+            padding: 15px 0;
+            line-height: 18px;
+        }
+
+        .som-radio-icon {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 12px 12px 12px 0;
+        }
+
+        .som-radio-label-selected {
+            color: var(--text-title);
+        }
+    }
+
+    @d ft {
+        width: 24px;
+        margin-left: -16px;
+        padding: 0;
+        font-size: 24px;
+        line-height: 1;
+        line-height: 48px;
+        .som-radio-check {
+            position: absolute;
+            left: -9999em;
+            margin: 0;
+            padding: 0;
+        }
+
+        [class^="som-icon"]::before,
+        [class*=" som-icon"]::before {
+            display: none;
+            margin: 0;
+        }
+
+        .som-radio-check:checked + .som-icon-check::before {
+            display: block;
+            color: var(--primary);
+        }
+    }
+
+    @m disabled {
+        .som-radio-label {
+            color: var(--text-caption);
+        }
+
+        .som-radio__ft .som-radio-check:checked + .som-icon-check::before {
+            color: var(--text-caption);
+        }
+    }
+
+    .som-list-item__hd {
+        width: 112px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+    .som-radio-input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        background-color: transparent;
+        font-size: inherit;
+        color: inherit;
+        height: 1.41em;
+        line-height: 1.41em;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+}

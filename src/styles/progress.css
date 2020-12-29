@@ -1,0 +1,74 @@
+/* progress.css */
+@import "./base/var.css";
+
+@c progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @m tick {
+        .som-progress__bar,
+        .som-progress__inner-bar {
+            height: 8px;
+            border-radius: 8px;
+        }
+    }
+
+    @d bar {
+        background-color: var(--line-c);
+        height: var(--progress-height);
+        flex: 1;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    @d inner-bar {
+        width: 0;
+        height: 100%;
+        background-color: var(--primary);
+        border-radius: 5px;
+    }
+
+    @d tip {
+        color: var(--text-caption);
+        font-size: 12px;
+        display: inline-block;
+        padding-left: 10px;
+    }
+
+    @d tick-wrap {
+        position: absolute;
+        top: 0;
+        margin-left: -6px;
+        & > .tick-icon {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            height: 4px;
+            width: 4px;
+            border-radius: 50%;
+            display: inline-block;
+            &.circle {
+                background-color: var(--text-hint);
+            }
+            &.circle-o {
+                background: #fff;
+            }
+        }
+        & > .tick-content {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            transform: translateX(-50%);
+            color: var(--text-caption);
+            font-size: 10px;
+        }
+    }
+
+    @d opr {
+        display: block;
+        margin-left: 4px;
+        font-size: 0;
+        color: var(--primary);
+    }
+}

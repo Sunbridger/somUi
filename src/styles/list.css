@@ -1,0 +1,42 @@
+/* list.css */
+@import "./base/var.css";
+@import "./mixins/mobile.css";
+@import "./mixins/setonepx.css";
+
+@c list {
+    background-color: var(--white);
+    line-height: var(--list-item-line-height);
+    font-size: var(--list-font-size);
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+        @mixin setTopLine var(--line-b);
+    }
+    &::after {
+        @mixin setBottomLine var(--line-b);
+    }
+
+    .som-list-no-title {
+        margin-top: .77em;
+    }
+
+    @d title {
+        margin-top: .77em;
+        margin-bottom: .3em;
+        padding: 0 16px;
+        color: var(--text-title);
+        font-size: 16px;
+
+        & + .som-list {
+            margin-top: 0;
+        }
+    }
+
+    @d tips {
+        margin-top: .3em;
+        color: var(--text-caption);
+        padding: 0 16px;
+        font-size: 14px;
+    }
+}

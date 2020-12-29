@@ -1,0 +1,14 @@
+{
+  "name": "@souche-ui/som-calendar",
+  "version": "4.5.12",
+  "description": "calendar",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/calendar",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@souche-ui/som-scroll-prevented",
+  "version": "4.5.12",
+  "description": "som-scroll-prevented",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/som-scroll-prevented",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ]
+}

@@ -1,0 +1,91 @@
+/* switch.css */
+@import "./base/var.css";
+@import "./list-item.css";
+@import "./mixins/setonepx.css";
+
+@c switch {
+
+    & + &::before {
+        @mixin setTopLine var(--line-b);
+        left: 16px;
+    }
+
+    &:first-child {
+        &::before {
+            display: none;
+        }
+    }
+
+    @d ft {
+        padding: 0;
+        display: table;
+
+        @d input {
+            appearance: none;
+            position: relative;
+            width: 52px;
+            height: var(--switch-height);
+            border: 1px solid var(--press);
+            outline: 0;
+            border-radius: 16px;
+            box-sizing: border-box;
+            background-color: var(--white);
+            transition: background-color .1s, bordaer .1s;
+            display: table-cell;
+            vertical-align: middle;
+
+            &::before {
+                content: " ";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50px;
+                height: 30px;
+                border-radius: 15px;
+                transition: transform .35s cubic-bezier(.45, 1, .4, 1);
+            }
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                background-color: var(--white);
+                box-shadow: var(--fixed-box-shadow);
+                transition: transform .35s cubic-bezier(.4, .4, .25, 1.35);
+            }
+
+            &:checked {
+                border-color: var(--switch-checked-border);
+                background-color: var(--switch-checked-bg);
+        
+                &::before {
+                    transform: scale(0);
+                }
+                &::after {
+                    transform: translateX(20px);
+                }
+            }
+
+            &[disabled] {
+                opacity: .3;
+            }
+        }
+
+        @m overlay {
+            width: 60px;
+            height: 50px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+    }
+}
+
+
+
+

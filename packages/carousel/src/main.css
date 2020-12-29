@@ -1,0 +1,58 @@
+/* carousel.css */
+/* carousel.css */
+@import "./carousel-item.css";
+
+:root {
+    /* carousel
+    -------------------------- */
+    --white: #fff;
+
+    --carousel-font-color: var(--white);
+    --carousel-dot-fill-color: #d0cdd1;
+    --carousel-dot-active-fill: var(--white);
+}
+
+@c carousel {
+    overflow: hidden;
+    position: relative;
+
+    & > .som-indicator,
+    .som-indicator-right {
+        position: absolute;
+        right: 15px;
+        bottom: 6px;
+    
+        & > a {
+            float: left;
+            margin-left: 9px;
+        
+            & > .som-icon-dot {
+                display: inline-block;
+                vertical-align: middle;
+                width: 7px;
+                height: 7px;
+                border-radius: 3px;
+                background-color: var(--carousel-dot-fill-color);
+            }
+            & > .som-icon-dot.active {
+                background-color: var(--carousel-dot-active-fill);
+            }
+    
+        }
+    }
+    
+    & > .som-indicator-center {
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
+    & > .som-indicator-left {
+        left: 15px;
+        right: auto;
+    }
+
+    & > .som-swiper {
+        overflow: hidden;
+        position: relative;
+    }
+}

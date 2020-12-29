@@ -1,0 +1,26 @@
+/* date-time-picker.css */
+
+@c date-time-picker {
+    &.not-range {
+        .som-picker .som-picker__columns {
+            justify-content: center;
+    
+            .som-picker-column:nth-child(1) {
+                flex: none;
+                width: 180px;
+            }
+            .som-picker-column:nth-child(2) {
+                flex: none;
+                width: 60px;
+            }
+            .som-picker-column:nth-child(3) {
+                flex: none;
+                width: 40px;
+            }
+            .som-picker-column:nth-child(4) {
+                flex: none;
+                width: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+/* action-tip.css */
+:root {
+    --white: #fff;
+}
+@c  action-tip {
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 101;
+        background-color: rgba(0, 0, 0, .7);
+    }
+    .tip-main {
+        width: calc(100% - 32px);
+        background-color: var(--white);
+        padding: 20px 16px;
+        position: fixed;
+        bottom: 0;
+        z-index: 102;
+        .tip-title {
+            position: relative;
+            text-align: center;
+            p {
+                position: absolute;
+                top: 2px;
+                right: 0;
+                margin: 0;
+                height: 14px;
+                font-size: 12px;
+            }
+            img {
+                position: absolute;
+                top: 2px;
+                right: 0;
+                width: 14px;
+                height: 14px;
+            }
+        }
+        .tip-content {
+            line-height: 25px;
+            font-size: 13px;
+            padding: 40px 14px 54px;
+        }
+    }
+}
+@c over-flow {
+    overflow: hidden;
+}

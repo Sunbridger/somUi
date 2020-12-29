@@ -1,0 +1,27 @@
+@define-mixin button-type $bgColor, $fontColor, $activeBgColor {
+    background-color: $bgColor;
+    color: $fontColor;
+    &:not(.som-button--disabled):visited {
+        color: $fontColor;
+    }
+    &:not(.som-button--disabled):active {
+        color: $fontColor;
+        background-color: $activeBgColor;
+    }
+}
+
+@define-mixin button-plain-type $Color, $borderColor, $activeColor, $activeBoderColor, $activeBgColor {
+    border-width: 1px;
+    background-color: transparent;
+    color: $Color;
+    border: 1px solid $borderColor;
+    &:not(.som-button--plain-disabled):active {
+        color: $activeColor;
+        border-color: $activeBoderColor;
+        background-color: $activeBgColor;
+    }
+}
+
+@define-mixin button-text $color {
+    color: $Color;
+}

@@ -1,0 +1,42 @@
+@c button-group {
+    background: #fff;
+    display: flex;
+    height: 54px;
+    padding: 0 16px;
+    align-items: center;
+    flex: 1;
+
+    .som-button {
+        font-weight: 500;
+    }
+
+    .som-button + .som-button {
+        margin-left: 8px;
+        margin-top: 0;
+    }
+
+    @m right {
+        justify-content: flex-end;
+        .som-button {
+            width: auto;
+        }
+    }
+
+    @m two {
+        .som-button:first-child {
+            flex: 1;
+        }
+        .som-button:last-child {
+            flex: 2;
+        }
+    }
+
+    @m three {
+        .som-button:first-child {
+            flex: 1;
+        }
+        .som-button:last-child {
+            flex: 3;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+/* slide-page.css */
+.som-slide-page {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .som-slide-page-Box {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: top 500ms ease-out;
+        .next-page {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+            z-index: 9;
+            .next-icon {
+                display: inline-block;
+                margin: 0 auto;
+                width: 20px;
+                height: 20px;
+                background: url(//img.souche.com/f2e/f8ae47217c245834070d089668f91f9d.png) no-repeat center;
+                background-size: 100% 100%;
+            }
+            /* iphoneX适配 */
+            @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+                & {
+                    bottom: 10px;
+                }
+            }
+        }
+    }
+}

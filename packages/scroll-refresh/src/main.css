@@ -1,0 +1,70 @@
+:root {
+    --text-hint: #b0b1b8;
+}
+
+.som-scroll-infinite {
+    -webkit-overflow-scrolling: touch;
+
+    .inner-content {
+        min-height: 101%;
+    }
+}
+
+.som-scroll-infinite .up {
+    color: var(--text-hint);
+    text-align: center;
+    font-size: 14px;
+    padding: 10px auto;
+}
+
+.som-scroll-infinite .down {
+    color: var(--text-hint);
+    text-align: center;
+    font-size: 12px;
+
+    [class^=som-icon-] {
+        color: #bfbfbf;
+    }
+
+    .pull,
+    .drop {
+        padding-bottom: 16px;
+    }
+
+    .loading {
+        padding: 16px 0;
+    }
+}
+.down .text {
+    margin-top: 8px;
+}
+
+
+.loading-default,
+.no-more-default {
+    height: 40px;
+    line-height: 40px;
+    color: var(--text-hint);
+    text-align: center;
+    display: inline-block;
+
+    [class^=som-icon-] {
+        margin-right: 10px;
+        color: #bfbfbf;
+    }
+}
+
+.back-top-wrapper {
+    position: fixed;
+    right: 16px;
+    bottom: 32px;
+    width: 40px;
+    height: 40px;
+    background: url('//img.souche.com/f2e/cc2397d03c65c716122fef861b8e1f84.png');
+    background-size: contain;
+}
+
+.back-top-wrapper:active {
+    background: url('//img.souche.com/f2e/3ba8b8cef34e972077e9e5adeb194424.png');
+    background-size: contain;
+}

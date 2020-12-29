@@ -1,0 +1,71 @@
+/* index-list.css */
+@import "./base/var.css";
+@import "./list.css";
+@import "./list-item.css";
+
+@c index-list {
+
+    background-color: var(--background-page);
+    transition: var(--all-transition);
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    @d content {
+        height: 100%;
+        flex: 1;
+        box-sizing: border-box;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .som-list__title {
+            font-size: 12px;
+            line-height: 12px;
+            color: var(--text-body);
+        }
+    }
+
+    @d index {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 4px;
+        background-color: var(--white);
+
+        .index-item {
+            color: var(--text-caption);
+            font-size: 12px;
+            width: 15px;
+            height: 15px;
+            border-radius: 7.5px;
+            text-align: center;
+            line-height: 15px;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+            .item-tips {
+                width: 86px;
+                height: 86px;
+                font-size: 36px;
+                border-radius: 8px;
+                background-color: var(--index-tips-fill-color);
+                color: var(--white);
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                line-height: 86px;
+                text-align: center;
+            }   
+
+            &.active {
+                background-color: var(--background-page);
+            }
+        }
+    }
+   
+}

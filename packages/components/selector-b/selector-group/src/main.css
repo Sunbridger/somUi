@@ -1,0 +1,92 @@
+/* selector-group.css */
+@import "../../../../../src/styles/mixins/setonepx.css";
+
+:root {
+    --white: #fff;
+    --text-title: #1b1c33;
+    --line-b: #d7d7db;
+}
+
+@c selector-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, .1);
+    background-color: var(--white);
+
+    @m transition {
+        transition: transform 240ms;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    @m multiple {
+        .som-selector-group__content {
+            padding-bottom: 54px;
+        }
+    }
+    @d multiple {
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--white);
+        font-size: 16px;
+    }
+
+    @d content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        transform: translate3d(0, 0, 0);
+
+        @m inner {
+            min-height: 100.2%;
+
+            @m header {
+                position: relative;
+                background-color: var(--white);
+                color: var(--text-title);
+                text-align: center;
+                font-size: 16px;
+                padding-top: 14px;
+                padding-bottom: 12px;
+
+                &::after {
+                    @mixin setBottomLine var(--line-b);
+                }
+            }
+        }
+
+        @m goback--button {
+            position: absolute;
+            left: 16px;
+        }
+
+        @m inner--title {
+            font-weight: bold;
+        }
+    }
+}
+
+.som-selector-alphabet-toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--white);
+    font-size: 38px;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: var(--text-title);
+    border-radius: 8px;
+}

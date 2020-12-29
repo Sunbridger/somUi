@@ -1,0 +1,146 @@
+@import "../../../../../src/styles/mixins/setonepx.css";
+
+:root {
+    --white: #fff;
+    --text-title: #1b1c33;
+    --line-b: #d7d7db;
+    --text-body: #5e5e66;
+}
+
+@c selector-list-item {
+    position: relative;
+    padding-left: 16px;
+    color: var(--text-title);
+
+    &:active {
+        background-color: #f5f5f5;
+    }
+
+    @d content {
+        padding-right: 16px;
+        min-height: 48px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::after {
+            @mixin setBottomLine var(--line-b);
+        }
+    }
+
+    @d label {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 18px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        box-sizing: border-box;
+        flex: 1;
+    }
+
+    @d image {
+        width: 32px;
+        margin-left: 2px;
+        margin-right: 14px;
+        display: inline-block;
+        img {
+            width: 32px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    @d checkbox {
+        display: inline-block;
+        width: 24px;
+        margin-right: 10px;
+
+        @d circle {
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            box-sizing: border-box;
+            border: 1px solid var(--line-b);
+            border-radius: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+
+    &.som-selector-list-item-label-selected {
+        color: #ff571a;
+        color: var(--primary);
+        .som-selector-list-item__checkbox {
+            .som-selector-list-item__checkbox__circle {
+                background-color: #ff571a;
+                background-color: var(--primary);
+                border-color: #ff571a;
+                border-color: var(--primary);
+            }
+        }
+        .som-selector-list-item__checkbox::after {
+            content: "";
+            position: absolute;
+            width: 28px;
+            height: 14px;
+            box-sizing: border-box;
+            border-left: 3px solid var(--white);
+            border-bottom: 3px solid var(--white);
+            top: 50%;
+            margin-top: -9px;
+            margin-left: -2px;
+            transform: rotate(-45deg) scale(.5);
+        }
+    }
+
+    .som-selector-list-item-mode-second {
+        background-color: var(--white);
+    }
+    .som-selector-list-item__content_mode_second {
+        min-height: 48px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::after {
+            @mixin setBottomLine var(--line-b);
+        }
+
+        .som-selector-list-item-right {
+            margin-left: auto;
+            background-color: var(--white);
+            &::before {
+                content: '';
+                border: solid var(--line-b);
+                border-width: 0 0 0 1px ;
+            }
+        }
+
+        .som-selector-list-item-right__label {
+            display: inline-block;
+            padding-left: 16px;
+            padding-right: 16px;
+            height: 48px;
+            line-height: 48px;
+            color: var(--text-body);
+        }
+    }
+
+    .som-selector-list-item-right-selected {
+        .som-selector-list-item-right__label {
+            color: #ff571a;
+            color: var(--primary);
+        }
+    }
+}
+
+/* 结合父节点判断是否显示border:
+如果当前列表项父节点不是最后一个节点，而且列表项为最后一项，则隐藏最后一条横线 */
+.som-selector-item:not(:last-child) .som-selector-list-item:last-child .som-selector-list-item__content {
+    position: relative;
+    &::after {
+        @mixin setBottomLine transparent;
+    }
+}
+

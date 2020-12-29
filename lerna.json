@@ -1,0 +1,14 @@
+{
+  "lerna": "2.11.0",
+  "packages": [
+    "packages/*"
+  ],
+  "bootstrap": {
+    "ignore": "@souche-ui/som-video-player"
+  },
+  "skipGit": true,
+  "forcePublish": true,
+  "yes": true,
+  "npmClient": "npm",
+  "version": "4.5.12"
+}

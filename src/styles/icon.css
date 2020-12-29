@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'som-ui-icons';
+    src: resolve('fonts/som-ui-icons.woff2?t=1472440743') format('woff2'), resolve('fonts/som-ui-icons.woff?t=1472440743') format('woff'), resolve('fonts/som-ui-icons.ttf?t=1472440743') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class*=" som-icon-"],
+[class^=som-icon-] {
+    font-family: 'som-ui-icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.som-icon-caret-bottom::before {
+    content: '\e609';
+}
+
+.som-icon-warning::before {
+    content: '\e612';
+}
+
+.som-icon-caret-top::before {
+    content: '\e60b';
+}
+
+.som-icon-filter::before {
+    content: '\e616';
+}
+
+.som-icon-circle-check::before {
+    content: '\e60d';
+}
+
+.som-icon-circle::before {
+    content: '\e60e';
+}
+
+.som-icon-date::before {
+    content: '\e608';
+}
+
+.som-icon-close::before {
+    content: '\e605';
+}
+
+.som-icon-check::before {
+    content: '\e614';
+}
+
+.som-icon-arrow-down::before {
+    content: '\e611';
+}
+
+.som-icon-circle-close::before {
+    content: '\e606';
+}
+
+.som-icon-loading::before {
+    content: '\e61c';
+}
+
+.som-icon-arrow-left::before {
+    content: '\e60f';
+}
+
+.som-icon-arrow-right::before {
+    content: '\e60c';
+}
+
+.som-icon-search::before {
+    content: '\e60a';
+}
+
+.som-icon-arrow-up::before {
+    content: '\e610';
+}
+
+.som-icon-information::before {
+    content: '\e615';
+}
+
+.som-icon-star::before {
+    content: "\e619";
+}
+
+.som-icon-address::before {
+    content: "\e61a";
+}
+
+.som-icon-help::before {
+    content: "\e624";
+}
+
+.som-icon-more::before {
+    content: "\e626";
+}
+
+.som-icon-edit::before {
+    content: "\e628";
+}
+
+.som-icon-heart::before {
+    content: "\e62a";
+}
+
+.som-icon-directory::before {
+    content: "\e601";
+}
+
+.som-icon-thumbtack::before {
+    content: "\e61b";
+}
+
+.som-icon-sort-arrow-up::before {
+    content: "\e618";
+}
+
+.som-icon-sort-arrow-down::before {
+    content: "\e617";
+}
+.som-icon-delete::before {
+    content: "\e625";
+}
+.som-icon-loading {
+    animation: rotating 1s linear infinite;
+    transform-origin: 50% 48.55%;
+}
+
+.som-icon--right {
+    margin-left: 5px;
+}
+
+.som-icon--left {
+    margin-right: 5px;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(90deg);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    75% {
+        transform: rotateZ(270deg);
+    }
+    /* 80% {
+        transform: rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+        -moz-transform: rotateZ(360deg);
+        -ms-transform: rotateZ(360deg);
+        -o-transform: rotateZ(360deg);
+} */
+    100% {
+        transform: rotateZ(360deg);
+    }
+}

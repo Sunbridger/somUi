@@ -1,0 +1,20 @@
+{
+  "name": "@souche-ui/som-image-upload",
+  "version": "4.5.12",
+  "description": "image-upload",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/image-upload",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "@souche-ui/oss-image": "^0.5.1",
+    "@souche-ui/som-image-viewer": "^4.5.12",
+    "axios": "^0.18.0",
+    "exif-js": "^2.3.0"
+  }
+}

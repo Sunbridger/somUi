@@ -1,0 +1,53 @@
+@define-mixin setLine $color1 {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 1px;
+    border: 1px solid $color1;
+    color: $color1;
+    height: 200%;
+    transform-origin: left top;
+    transform: scale(.5);
+}
+
+
+@define-mixin setTopLine $color1 {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid $color1;
+    color: $color1;
+    transform-origin: 0 0;
+    transform: scaleY(.5);
+}
+
+@define-mixin setBottomLine $color1 {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid $color1;
+    color: $color1;
+    transform-origin: 0 100%;
+    transform: scaleY(.5);
+}
+
+@define-mixin setLeftLine $color1 {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-left: 1px solid $color1;
+    color: $color1;
+    transform-origin: 0 0;
+    transform: scaleX(.5);
+}

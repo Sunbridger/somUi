@@ -1,0 +1,65 @@
+/* notice-bar.css */
+@import "./base/var.css";
+@import "./list-item.css";
+
+@c notice-bar {
+
+    background-color: var(--background-notice);
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--text-title);
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+
+    @m info {
+        background-color: var(--info-light-bg);
+        color: var(--color-info);
+        .som-notice-bar__operation {
+            color: var(--color-info);
+        }
+    }
+
+    @m warn {
+        background-color: var(--error-light-bg);
+        color: var(--color-error);
+        .som-notice-bar__operation {
+            color: var(--color-error);
+        }
+    }
+
+    @m success {
+        background-color: var(--success-light-bg);
+        color: var(--success);
+        .som-notice-bar__operation {
+            color: var(--success);
+        }
+    }
+
+    @d content {
+        flex: 1;
+        padding: 14px 0;
+        width: auto;
+        overflow: hidden;
+
+        .som-notice-bar-marquee {
+            box-sizing: border-box;
+            text-align: justify;
+        }
+
+        transition: var(--all-transition);
+    }
+    
+    @d icon {
+        display: flex;
+        align-items: center;
+        margin-right: 4px;
+    }
+    
+    @d operation {
+        display: flex;
+        margin-left: 16px;
+        align-items: center;
+        color: var(--text-caption);
+    }
+}

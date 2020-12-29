@@ -1,0 +1,21 @@
+/* selector-item.css */
+:root {
+    --text-body: #5e5e66;
+    --background-page: #f2f3f5;
+    --white: #fff;
+}
+.som-selector-item {
+
+    .som-selector-item__title {
+        height: 28px;
+        line-height: 28px;
+        padding-left: 16px;
+        color: var(--text-body);
+        font-size: 12px;
+        background-color: var(--background-page);
+    }
+
+    .som-selector-item__content {
+        background-color: var(--white);
+    }
+}

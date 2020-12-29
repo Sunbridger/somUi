@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>Group 10 Copy 5unselected</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="设计稿" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-10-Copy-5" transform="translate(1.000000, 1.000000)">
+            <circle id="Mask" stroke="#C1C1C1" stroke-width="1.5" cx="24" cy="24" r="24"></circle>
+            <g id="Group-7" transform="translate(3.000000, 10.000000)">
+                <path d="M13.8885663,9.41651658 C13.8885663,7.52296886 12.3535426,5.98794515 10.4599948,5.98794515 C8.56644712,5.98794515 7.03142341,7.52296886 7.03142341,9.41651658" id="Oval-2-Copy-16" stroke="#C1C1C1" stroke-width="2" transform="translate(10.459995, 9.416517) rotate(-15.000000) translate(-10.459995, -9.416517) "></path>
+                <path d="M27.4537837,4.19912527 C27.4537837,2.30557756 25.9187599,0.770553845 24.0252122,0.770553845 C22.1316645,0.770553845 20.5966408,2.30557756 20.5966408,4.19912527" id="Oval-2-Copy-17" stroke="#C1C1C1" stroke-width="2" transform="translate(24.025212, 4.199125) rotate(-15.000000) translate(-24.025212, -4.199125) "></path>
+                <path d="M13.806808,14.3578174 C15.5186925,17.0316895 18.5152807,18.8040042 21.9258151,18.8040042 C25.3363495,18.8040042 28.3329377,17.0316895 30.0448222,14.3578174" id="Combined-Shape-Copy-4" stroke="#C1C1C1" stroke-width="2" transform="translate(21.925815, 16.580911) rotate(-22.000000) translate(-21.925815, -16.580911) "></path>
+                <ellipse id="Oval-5-Copy-6" fill="#C1C1C1" opacity="0.4" transform="translate(35.043255, 6.964034) rotate(-17.000000) translate(-35.043255, -6.964034) " cx="35.0432546" cy="6.96403428" rx="3.42857143" ry="5.14285714"></ellipse>
+                <ellipse id="Oval-5-Copy-7" fill="#C1C1C1" opacity="0.4" filter="url(#filter-1)" transform="translate(4.782385, 17.398817) rotate(-17.000000) translate(-4.782385, -17.398817) " cx="4.78238507" cy="17.3988169" rx="3.42857143" ry="5.14285714"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

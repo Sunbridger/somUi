@@ -1,0 +1,367 @@
+/* calendar.css */
+@import "../../../src/styles/mixins/setonepx.css";
+:root {
+    --line-b: #d7d7db;
+    --text-title: #1b1c33;
+    --text-anti: #fff;
+    --white: #fff;
+}
+
+@c calendar {
+    width: 100%;
+    z-index: 5;
+    top: 0;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: .3s;
+    position: fixed;
+    display: flex;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
+    -webkit-box-direction: normal;
+    box-sizing: border-box;
+
+    .som-calendar__toolbar-wrap {
+        position: relative;
+    }
+
+    @d toolbar {
+        display: flex;
+        height: 44px;
+        line-height: 44px;
+        position: relative;
+        justify-content: space-between;
+        background-color: #f7f8fa;
+        background-color: var(--background-block);
+        flex-shrink: 0;
+        box-sizing: border-box;
+        &::before {
+            @mixin setTopLine #c1c1c1;
+        }
+
+        &::after {
+            @mixin setBottomLine var(--line-b);
+        }
+    }
+
+    .som-calendar__cancel,
+    .som-calendar__confirm {
+        color: #ff571a;
+        color: var(--primary-text);
+        padding: 0 16px;
+        font-size: 16px;
+    }
+
+    @d cancel {
+        margin-right: 8px;
+    }
+    @d confirm {
+        &.disable {
+            color: #ff9a76;
+            color: var(--primary-disable);
+        }
+        margin-left: 8px;
+    }
+
+    @d title {
+        font-size: 18px;
+        text-align: center;
+        flex: 1;
+        color: var(--text-title);
+    }
+
+    @d result {
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        height: 84px;
+        align-items: center;
+        padding: 16px 16px 0 16px;
+        font-size: 16px;
+        box-sizing: border-box;
+        color: var(--text-title);
+        flex-shrink: 0;
+
+        .time-txt {
+            color: #5e5e66;
+            color: var(--text-body);
+            font-size: 14px;
+            display: block;
+            margin-top: 8px;
+
+            i {
+                font-size: 12px;
+            }
+        }
+
+        & > div {
+            flex: 1;
+            position: relative;
+            &:last-child:not(:first-child) {
+                text-align: right;
+            }
+        }
+
+        .range-length {
+            font-size: 16px;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 15px;
+                border-top: 1px solid #bfbfbf;
+                bottom: -8px;
+                left: -16px;
+                transform: rotateZ(135deg);
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                width: 15px;
+                border-top: 1px solid #bfbfbf;
+                top: -8px;
+                right: -16px;
+                transform: rotateZ(135deg);
+                z-index: 10;
+            }
+
+        }
+
+        .end-input {
+            text-align: right;
+        }
+
+        input {
+            border: none;
+            width: 135px;
+            font-weight: bold;
+            padding: 0;
+            font-size: 24px;
+
+            &::-webkit-input-placeholder {
+                font-size: 20px;
+                color: #5e5e66;
+                color: var(--text-body);
+                font-weight: normal;
+            }
+        }
+    }
+
+    @d week {
+        box-sizing: border-box;
+        position: relative;
+        flex-shrink: 0;
+        font-size: 12px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--line-b);
+        display: flex;
+
+        & > div {
+            flex: 1;
+            line-height: 12px;
+            text-align: center;
+        }
+    }
+
+    .som-calebdar__date-wrap {
+        overflow-x: hidden;
+        overflow-y: auto;
+        flex: 1;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    @d date {
+        display: flex;
+        margin-bottom: 18px;
+
+        &:nth-child(2) {
+            justify-content: flex-end;
+        }
+
+        &:last-child {
+            justify-content: flex-start;
+        }
+
+        .som-calendar__date-each {
+            width: 14.2%;
+            text-align: center;
+            color: var(--text-title);
+            font-size: 16px;
+            height: 36px;
+            position: relative;
+
+            & > span {
+                height: 36px;
+                width: 36px;
+                line-height: 36px;
+                display: inline-block;
+
+                sup {
+                    white-space: nowrap;
+                    position: absolute;
+                    font-size: 8px;
+                    top: -14px;
+                    margin-left: -2px;
+                }
+            }
+        }
+
+        .today {
+            font-size: 12px;
+            font-weight: 500;
+            color: #ff571a;
+            color: var(--primary);
+        }
+
+        &.week-disabled {
+            .som-calendar__date-each:nth-child(1) {
+                color: #afb2ba;
+            }
+
+            .som-calendar__date-each:nth-child(7) {
+                color: #afb2ba;
+            }
+        }
+
+        .in-date {
+            background-color: #ff571a;
+            background-color: var(--primary);
+            color: var(--text-anti);
+
+            .today {
+                color: #fff;
+            }
+        }
+
+        .current-date,
+        .begin-date span,
+        .over-date span,
+        .in-date:first-child span,
+        .in-date:last-child span {
+            border-radius: 18px;
+            background-color: #ff571a;
+            background-color: var(--primary);
+            color: var(--text-anti);
+        }
+
+        .in-date:first-child,
+        .in-date:last-child {
+            background-color: var(--white);
+        }
+
+        .in-date.begin-date:not(:last-child),
+        .in-date:first-child:not(:last-child):not(.over-date) {
+            background-color: var(--white);
+            span {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            & ::after {
+                position: absolute;
+                content: '';
+                height: 36px;
+                width: calc(50% - 17px);
+                left: calc(50% + 18px);
+                background-color: #ff571a;
+                background-color: var(--primary);
+            }
+        }
+        .in-date.over-date:not(:first-child),
+        .in-date:last-child:not(:first-child):not(.begin-date) {
+            background-color: var(--white);
+            span {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            & ::before {
+                position: absolute;
+                content: '';
+                height: 36px;
+                left: 0;
+                width: calc(50% - 17px);
+                background-color: #ff571a;
+                background-color: var(--primary);
+            }
+        }
+
+        .begin-date.over-date.in-date {
+            span {
+                position: relative;
+                border-radius: 18px;
+
+                &::before {
+                    display: none !important;
+                }
+
+                &::after {
+                    width: 44px;
+                    height: 44px;
+                    border: 1px solid #ff571a;
+                    border: 1px solid var(--primary);
+                    content: '';
+                    position: absolute;
+                    top: -4px;
+                    left: -4px;
+                    border-radius: 22px;
+                    background-color: transparent;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        .disabled-date {
+            color: #afb2ba;
+        }
+    }
+
+    @d shortcut {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        &::before {
+            @mixin setTopLine #c1c1c1;
+        }
+
+        .shortcut-button {
+            height: 48px;
+            padding: 0;
+            line-height: 48px;
+            display: inline-block;
+            width: 33%;
+            text-align: center;
+            color: #ff571a;
+            color: var(--primary);
+
+            &.disable {
+                color: #ff9a76;
+                color: var(--primary-disable);
+            }
+        }
+
+    }
+
+    @d footer {
+        position: relative;
+    }
+
+    .som-calendar__month-title {
+        padding: 20px 16px;
+        margin: 0;
+        font-weight: bold;
+        color: var(--text-title);
+        font-size: 16px;
+    }
+
+}
+
+.som-calendar-animate-bottom-enter,
+.som-calendar-animate-bottom-leave-active {
+    transform: translate3d(0, 100%, 0);
+    transition-duration: 300ms;
+}

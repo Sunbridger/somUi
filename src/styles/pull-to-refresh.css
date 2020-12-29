@@ -1,0 +1,50 @@
+/* pull-to-refresh.css */
+@import "./base/var.css";
+
+@c pull-to-refresh {
+    -webkit-transform-origin: left top 0;
+    transform-origin: left top 0;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @m up {
+        .som-pull-to-refresh__indicator {
+            margin-bottom: -72px;
+        }
+        .som-pull-to-refresh__reload__indicator {
+            text-align: center;
+            margin-top: -72px;
+        }
+    }
+
+    @m down {
+        .som-pull-to-refresh__indicator {
+            margin-top: -72px;
+        }
+    }
+
+    .som-pull-to-refresh-content-wrap {
+        overflow: hidden;
+
+        &.with-scroll {
+            min-height: 101%;
+        }
+    }
+
+    @d content {
+        min-height: 101%;
+        transition: -webkit-transform .3s;
+        transition: transform .3s;
+        transition: transform .3s, -webkit-transform .3s;
+    }
+
+    @d indicator {
+        color: var(--text-caption);
+        text-align: center;
+
+        .som-icon-loading {
+            margin-right: 10px;
+        }
+    }
+}

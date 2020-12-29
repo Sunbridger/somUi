@@ -1,0 +1,371 @@
+[
+    {
+        "path": "/components",
+        "componentName": "docs",
+        "children": [
+            {
+                "name": "installation",
+                "alias": "安装",
+                "index": true
+            },
+            {
+                "name": "quickstart",
+                "alias": "快速上手"
+            },
+            {
+                "name": "custom-theme",
+                "alias": "定制主题"
+            },
+            {
+                "name": "changelog",
+                "alias": "更新日志",
+                "componentName": "changelog"
+            },
+            {
+                "alias": "Components",
+                "children": [
+                    {
+                        "groupName": "Basic",
+                        "children": [
+                            {
+                                "name": "color",
+                                "alias": "色彩"
+                            },
+                            {
+                                "name": "font",
+                                "alias": "字体"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "Layout",
+                        "children": [
+                            {
+                                "name": "wing-bank",
+                                "alias": "两翼留白"
+                            },
+                            {
+                                "name": "white-space",
+                                "alias": "上下留白"
+                            },
+                            {
+                                "name": "flexbox",
+                                "alias": "弹性盒"
+                            },
+                            {
+                                "name": "sticky",
+                                "alias": "吸顶"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "Navigation",
+                        "children": [
+                            {
+                                "name": "tabs",
+                                "alias": "选项卡"
+                            },
+                            {
+                                "name": "tab-bar",
+                                "alias": "底部导航"
+                            },
+                            {
+                                "name": "segmented-control",
+                                "alias": "分段器"
+                            },
+                            {
+                                "name": "nav-bar",
+                                "alias": "导航栏"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "Data Entry",
+                        "children": [
+                            {
+                                "name": "switch",
+                                "alias": "开关"
+                            },
+                            {
+                                "name": "button",
+                                "alias": "按钮"
+                            },
+                            {
+                                "name": "radio",
+                                "alias": "单选框"
+                            },
+                            {
+                                "name": "picker",
+                                "alias": "选择器"
+                            },
+                            {
+                                "name": "checkbox",
+                                "alias": "多选"
+                            },
+                            {
+                                "name": "time-picker",
+                                "alias": "时间选择器"
+                            },
+                            {
+                                "name": "date-picker",
+                                "alias": "日期选择器"
+                            },
+                            {
+                                "name": "date-time-picker",
+                                "alias": "日期时间选择器"
+                            },
+                            {
+                                "name": "textarea",
+                                "alias": "文本框"
+                            },
+                            {
+                                "name": "input",
+                                "alias": "输入框"
+                            },
+                            {
+                                "name": "search-bar",
+                                "alias": "搜索栏"
+                            },
+                            {
+                                "name": "range",
+                                "alias": "范围选择"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "Data Display",
+                        "children": [
+                            {
+                                "name": "badge",
+                                "alias": "徽标数"
+                            },
+                            {
+                                "name": "flow",
+                                "alias": "流程"
+                            },
+                            {
+                                "name": "progress",
+                                "alias": "进度条"
+                            },
+                            {
+                                "name": "accordion",
+                                "alias": "手风琴"
+                            },
+                            {
+                                "name": "popup",
+                                "alias": "弹出框"
+                            },
+                            {
+                                "name": "icon",
+                                "alias": "图标"
+                            },
+                            {
+                                "name": "list",
+                                "alias": "列表"
+                            },
+                            {
+                                "name": "notice-bar",
+                                "alias": "通告栏"
+                            },
+                            {
+                                "name": "rate",
+                                "alias": "评分"
+                            },
+                            {
+                                "name": "tag",
+                                "alias": "标签"
+                            },
+                            {
+                                "name": "animate-number",
+                                "alias": "数字动画"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "Feedback",
+                        "children": [
+                            {
+                                "name": "loading",
+                                "alias": "加载"
+                            },
+                            {
+                                "name": "toast",
+                                "alias": "轻提示"
+                            },
+                            {
+                                "name": "dialog",
+                                "alias": "弹窗"
+                            },
+                            {
+                                "name": "action-sheet",
+                                "alias": "动作面板"
+                            },
+                            {
+                                "name": "modal",
+                                "alias": "对话框"
+                            },
+                            {
+                                "name": "tips",
+                                "alias": "提示气泡"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "Combinnation",
+                        "children": [
+                            {
+                                "name": "index-list",
+                                "alias": "索引列表"
+                            },
+                            {
+                                "name": "filter",
+                                "alias": "筛选"
+                            },
+                            {
+                                "name": "result",
+                                "alias": "结果页"
+                            },
+                            {
+                                "name": "select",
+                                "alias": "单项选择框"
+                            },
+                            {
+                                "name": "keyboard",
+                                "alias": "数字键盘"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "path": "/packages",
+        "componentName": "docs",
+        "children": [
+            {
+                "name": "packages",
+                "alias": "安装",
+                "index": true
+            },
+            {
+                "alias": "Components",
+                "children": [
+                    {
+                        "groupName": "extend-component",
+                        "children": [
+                            {
+                                "name": "scroll-prevented",
+                                "alias": "阻止滚动穿透"
+                            },
+                            {
+                                "name": "scroll-refresh",
+                                "alias": "滚动刷新"
+                            },
+                            {
+                                "name": "image-viewer",
+                                "alias": "图片查看"
+                            },
+                            {
+                                "name": "image-upload",
+                                "alias": "图片上传"
+                            },
+                            {
+                                "name": "video-play",
+                                "alias": "视频播放2.0"
+                            },
+                            {
+                                "name": "video-upload",
+                                "alias": "视频录制上传"
+                            },
+                            {
+                                "name": "slide-page",
+                                "alias": "滑动页面"
+                            },
+                            {
+                                "name": "action-tip",
+                                "alias": "详情提示"
+                            },
+                            {
+                                "name": "calendar",
+                                "alias": "日历选择器"
+                            },
+                            {
+                                "name": "carousel",
+                                "alias": "轮播图"
+                            },
+                            {
+                                "name": "table",
+                                "alias": "表格"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "selectors",
+                        "children": [
+                            {
+                                "name": "action-picker",
+                                "alias": "action-picker"
+                            },
+                            {
+                                "name": "selector-item",
+                                "alias": "选择器子组件"
+                            },
+                            {
+                                "name": "car-picker",
+                                "alias": "车辆选择器"
+                            },
+                            {
+                                "name": "city-picker",
+                                "alias": "城市选择器"
+                            },
+                            {
+                                "name": "shop-select",
+                                "alias": "门店选择"
+                            }
+                        ]
+                    },
+                    {
+                        "groupName": "no update",
+                        "children": [
+                            {
+                                "name": "video-player",
+                                "alias": "视频播放1.0"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "path": "/docs/guide",
+        "componentName": "docs",
+        "children": [
+            {
+                "name": "introduce",
+                "alias": "介绍",
+                "index": true
+            },
+            {
+                "name": "standard",
+                "alias": "参与贡献"
+            },
+            {
+                "name": "reset-css",
+                "alias": "重置样式"
+            }
+        ]
+    },
+    {
+        "path": "/resource",
+        "componentName": "docs",
+        "children": [
+            {
+                "name": "download",
+                "alias": "资源下载",
+                "index": true
+            }
+        ]
+    }
+]

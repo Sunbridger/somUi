@@ -1,0 +1,80 @@
+/* accordion.css */
+@import "./base/var.css";
+@import "./mixins/mobile.css";
+
+@c accordion {
+    transition: all .4s linear;
+    .som-list::before {
+        border: none;
+    }
+    .som-list::after {
+        left: 16px;
+    }
+
+    .som-list-item {
+        @mixin setTapColor rgba(0, 0, 0, 0);
+        user-select: none;
+
+        &:active {
+            background-color: rgba(0, 0, 0, .1);
+        }
+    }
+
+    & > div:last-child {
+        .som-list::after {
+            border: none;
+        }
+    }
+
+    .som-list-item__ft {
+        line-height: 1;
+    }
+    
+    .som-icon-arrow-up {
+        color: var(--accordion-icon-color);
+    }
+
+    @m center {
+        line-height: 48px;
+        text-align: center;
+        display: block;
+        color: var(--text-body);
+
+        .som-list-item__ft {
+            display: inline;
+        }
+    }
+
+    @d panel {
+        margin-top: -3px;
+        padding-left: 16px;
+        font-size: 14px;
+        color: var(--text-body);
+        line-height: 20px;
+
+        .som-list-item {
+            color: var(--text-body);
+            padding: 0;
+            line-height: 16px;
+
+            &::before {
+                left: 0;
+            }
+
+        }
+
+        & > .som-list-item:first-child {
+           
+            &::before {
+                display: block;
+            }
+        }
+
+        &.som-accordion__panel-center {
+            color: var(--text-title);
+            .som-list-item {
+                color: var(--text-title);
+            }
+        }
+    }
+}

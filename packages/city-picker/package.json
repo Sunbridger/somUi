@@ -1,0 +1,17 @@
+{
+	"name": "@souche-ui/som-city-picker",
+	"version": "4.5.12",
+	"description": "city-picker",
+	"main": "./lib/index.js",
+	"repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/city-picker",
+	"author": "souchefe",
+	"license": "MIT",
+	"files": [
+		"src",
+		"lib",
+		"index.js"
+	],
+	"dependencies": {
+		"@souche-f2e/http-request": "^6.0.0"
+	}
+}

@@ -1,0 +1,22 @@
+/* select.css */
+@import "./base/var.css";
+@import "./base/transition.css";
+@import "./mixins/mobile.css";
+@import "./mixins/setonepx.css";
+
+@c select {
+    position: relative;
+    &::before {
+        @mixin setTopLine var(--line-b);
+        left: 16px;
+    }
+    &:first-child {
+        &::before {
+            display: none;
+        }
+    }
+    .arrow {
+        color: var(--text-hint);
+        font-size: 16px;
+    }
+}

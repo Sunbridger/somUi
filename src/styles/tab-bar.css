@@ -1,0 +1,111 @@
+@import "./base/var.css";
+@import "./mixins/setonepx.css";
+
+.som-tab-bar {
+    display: flex;
+    position: absolute;
+    z-index: 500;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--white);
+
+    box-shadow: var(--fixed-box-shadow);
+
+    &::before {
+        @mixin setTopLine #C0BFC4;
+    }
+}
+
+.som-tab-bar__item {
+    display: block;
+    flex: 1;
+    padding: 6px 0 0;
+    font-size: 0;
+    color: var(--text-body);
+    text-align: center;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &.som-tab-bar__item-on {
+        .som-tab-bar__icon,
+        .som-tab-bar__icon > i,
+        .som-tab-bar__label {
+            color: var(--tab-bar-text-active-color);
+        }
+    }
+}
+
+.som-tab-bar__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+    i&,
+    > i {
+        font-size: 24px;
+        color: var(--text-body);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.som-tab-bar__label {
+    text-align: center;
+    color: var(--text-body);
+    font-size: 10px;
+    line-height: 10px;
+    margin: 4px 0 5px;
+}
+
+.weui-tab {
+    position: relative;
+    height: 100%;
+}
+
+.weui-tab__panel {
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 50px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.som-tab-bar-reddot {
+    position: relative;
+}
+
+.som-tab-bar-reddot::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 9px;
+    height: 9px;
+    background-color: #f74c31;
+    border-radius: 5px;
+    right: -3px;
+    top: -2px;
+    background-clip: padding-box;
+    border: 1px solid #fff;
+}
+
+.som-tab-bar__icon {
+    position: relative;
+}
+.som-tab-bar__icon > sup {
+    position: absolute;
+    top: -5px;
+    left: 100%;
+    transform: translateX(-50%);
+    z-index: 101;
+}
+.som-tab-bar__item.som-tab-bar-simple {
+    padding: 0;
+    height: 50px;
+    line-height: 50px;
+}
+.som-tab-bar-simple .som-tab-bar__label {
+    font-size: 14px;
+    line-height: 50px;
+}

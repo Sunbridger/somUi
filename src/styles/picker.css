@@ -1,0 +1,130 @@
+/* picker.css */
+@import "./mixins/setonepx.css";
+@import "./base/var.css";
+
+@c picker {
+    overflow: hidden;
+    user-select: none;
+    position: relative;
+    background-color: var(--white);
+
+    @d toolbar {
+        display: flex;
+        height: 44px;
+        line-height: 44px;
+        position: relative;
+        justify-content: space-between;
+        background-color: var(--background-block);
+        &::before {
+            @mixin setTopLine var(--picker-toolbar-topline);
+        }
+
+        &::after {
+            @mixin setBottomLine var(--line-b);
+        }
+    }
+
+    .som-picker__cancel,
+    .som-picker__confirm {
+        color: var(--primary-text);
+        padding: 0 16px;
+        font-size: 16px;
+    }
+
+    @d cancel {
+        margin-right: 8px;
+    }
+    @d confirm {
+        margin-left: 8px;
+    }
+
+    @d title {
+        font-size: 14px;
+        text-align: center;
+        flex: 1;
+    }
+
+    @d columns {
+        display: flex;
+        position: relative;
+        padding: 15px 0;
+        box-sizing: content-box;
+    }
+
+    @d loading {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        position: absolute;
+        background-color: rgba(255,255,255,.9);
+
+        circle {
+            stroke: blue;
+        }
+    }
+
+    @d frame {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+        pointer-events: none;
+        transform: translateY(-50%);
+
+        &::before {
+            @mixin setTopLine var(--text-caption);
+        }
+
+        &::after {
+            @mixin setBottomLine var(--text-caption);
+        }
+    }
+
+    .som-picker-column {
+        flex: 1;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+
+        .som-picker-column__shade {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, .95), rgba(255, 255, 255, .6)), linear-gradient(to top, rgba(255, 255, 255, .95), rgba(255, 255, 255, .6));
+            background-position: top, bottom;
+            background-repeat: no-repeat;
+        }
+
+        
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            padding: 0 5px;
+            color: var(--text-body);
+        }
+
+        .som-ellipsis {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            font-size: 18px;
+        }
+
+        li.som-picker-column--selected {
+            color: var(--text-title);
+            font-size: 24px;
+        }
+
+        li.som-picker-column--disabled {
+            opacity: .3;
+        }
+    }
+}

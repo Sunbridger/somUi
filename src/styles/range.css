@@ -1,0 +1,54 @@
+/* range.css */
+
+@c randge-container {
+    width: 100%;
+    position: relative;
+    .som-randge__run-container {
+        height: 22px;
+        position: relative;
+        .som-randge__runway {
+            width: 100%;
+            background-color: var(--line-c);
+            height: 4px;
+            position: absolute;
+            top: 8px;
+            z-index: 0;
+        }
+        .randge__btn {
+            z-index: 99;
+            position: absolute;
+            top: 0;
+            width: 22px;
+            height: 22px;
+            background-color: var(--white);
+            border-radius: 100%;
+            box-shadow: var(--fixed-box-shadow);
+        }
+        .end-btn {
+            z-index: 100;
+        }
+        .range-container {
+            z-index: 9;
+            position: absolute;
+            height: 4px;
+            top: 8px;
+            background-color: var(--primary);
+        }
+    }
+    .som-randge__number {
+        position: absolute;
+        top: 26px;
+        left: 0;
+        width: 100%;
+        font-size: 12px;
+        .range {
+            position: absolute;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            cursor: pointer;
+            color: var(--text-caption);
+        }
+    }
+}
+

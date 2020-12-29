@@ -1,0 +1,137 @@
+/* tag.css */
+@import './base/var.css';
+@import "./mixins/mobile.css";
+
+@c tag {
+    display: inline-block;
+    border-radius: var(--border-radius-normal);
+    font-size: 12px;
+    padding: 0 14px;
+    position: relative;
+    box-sizing: border-box;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid transparent;
+    border-color: currentColor;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+
+    @d icon {
+        margin-right: 8px;
+    }
+
+    @m small {
+        padding: 0 8px;
+        line-height: 32px;
+        height: 32px;
+    }
+
+    @m mark {
+        border-radius: 0 8px 8px 0;
+        border-radius: 0 16px 16px 0;
+    }
+
+    @m default {
+        background-color: var(--background-page);
+        color: var(--text-title);
+        border-color: var(--background-page);
+
+        &.som-tag--plain {
+            color: var(--text-title);
+        }
+
+        .som-tag__close {
+            color: var(--text-body);
+        }
+
+    }
+
+    @m info {
+        background-color: var(--info-light-bg);
+        color: var(--color-info);
+
+        &.som-tag--plain {
+            color: var(--color-info);
+        }
+
+    }
+
+    @m success {
+        background-color: var(--success-light-bg);
+        color: var(--success);
+
+        &.som-tag--plain {
+            color: var(--success);
+        }
+
+    }
+
+    @m warn {
+        background-color: var(--warn-light-bg);
+        color: var(--color-warn);
+
+        &.som-tag--plain {
+            color: var(--color-warn);
+        }
+
+    }
+
+    @m error {
+        background-color: var(--error-light-bg);
+        color: var(--color-error);
+
+        &.som-tag--plain {
+            color: var(--color-error);
+        }
+
+    }
+
+    @m primary {
+        background-color: var(--tag-primary-bg);
+        color: var(--text-selected);
+
+        &::after {
+            border-color: var(--primary);
+        }
+
+        &.som-tag--plain {
+            color: var(--text-selected);
+        }
+
+    }
+
+    @m primaryed {
+        background-color: var(--primary);
+        color: var(--text-anti);
+        border-color: var(--primary);
+
+        &::after {
+            display: none;
+        }
+
+        &.som-tag--plain {
+            background-color: var(--primary);
+            color: var(--text-anti);
+        }
+    }
+
+    @m plain {
+        background-color: var(--white);
+        color: var(--text-hint);
+    }
+
+    @d close {
+        display: inline-block;
+        margin-left: 8px;
+        vertical-align: middle;
+        height: 36px;
+        line-height: 36px;
+        font-size: 0;
+        margin-top: -2px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        .som-icon-close {
+            vertical-align: middle;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+/* flexbox.css */
+@c flexbox {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    display: -webkit-flex;
+    box-align: center;
+    align-items: center;
+
+    .som-flexbox-item {
+        flex: 1;
+        -webkit-flex: 1;
+        min-width: 20px;
+        width: 0%;
+        &:first-child {
+            margin-top: 0!important;
+        }
+
+        &:last-child {
+            margin-right: 0!important;
+        }
+    }
+
+    &.som-flex-col 
+    &.som-flex-row {
+        box-direction: row;
+        box-orient: horizontal;
+        flex-direction: row;
+    }
+    &.som-flex-col {
+        box-orient: vertical;
+        flex-direction: column;
+        > .som-flexbox-item {
+            width: 100%;
+        }
+    }
+
+}

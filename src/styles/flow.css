@@ -1,0 +1,146 @@
+/* flow.css */
+@import "./base/var.css";
+
+@c flow {
+    display: inline-block;
+    position: relative;
+    background-color: var(--white);
+    color: var(--text-title);
+
+    @d bd {
+        display: flex;
+        padding: 16px 20px;
+        box-sizing: border-box;
+    }
+
+    @m flexable {
+        .som-flow-item {
+            flex: 1;
+            min-height: 0 !important;
+            min-width: 0 !important;
+        }
+    }
+
+    @m vertical {
+        .som-flow__bd {
+            padding: 20px 16px;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        .som-flow-item {
+            flex-direction: row;
+            min-height: 60px;
+            align-items: start;
+
+            &:last-child {
+                flex: inherit;
+                height: 18px;
+                min-height: 0;
+            }
+        }
+
+        .som-flow-item__title {
+            margin: 0 8px;
+        }
+
+        .som-flow-item__line {
+            width: 2px;
+            height: calc(100% - 15px);
+            top: 18px;
+            left: 8px;
+        }
+    }
+
+
+}
+
+@c flow-item {
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+    position: relative;
+
+    @m done {
+        & > [class^="som-icon"] {
+            font-size: 18px;
+            color: var(--primary);
+        }
+        .som-flow-item__circle {
+            border-color: var(--primary);
+            color: var(--text-selected);
+
+            i {
+                color: var(--flow-active-color);
+            }
+        }
+
+        .som-flow-item__line {
+            background-color: var(--primary);
+        }
+    }
+
+    @m active {
+        & > [class^="som-icon"] {
+            font-size: 18px;
+            color: var(--primary);
+        }
+        .som-flow-item__circle {
+            border-color: var(--primary);
+            color: var(--text-selected);
+
+            i {
+                color: var(--flow-active-color);
+            }
+        }
+    }
+
+    & > [class^="som-icon"] {
+        font-size: 18px;
+        color: var(--line-c);
+    }
+
+    @d circle {
+        &.circle-icon {
+            background-color: var(--primary);
+        }
+
+        width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        font-weight: 500;
+        background-color: var(--white);
+        box-sizing: border-box;
+        border: 2px solid var(--press);
+        z-index: 4;
+    }
+
+    @d line {
+        position: absolute;
+        top: 9px;
+        width: calc(100% - 15px);
+        left: calc(50% + 8px);
+        height: 2px;
+        background-color: var(--press);
+    }
+
+    &:last-child {
+        .som-flow-item__line {
+            width: 0;
+        }
+    }
+
+    @d title {
+        margin-top: 8px;
+        text-align: center;
+        span {
+            word-break: break-all;
+            display: inline-block;
+        }
+    }
+}

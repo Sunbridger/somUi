@@ -1,0 +1,202 @@
+/* segmented-control.css */
+@import "./base/var.css";
+
+@c segmented-control {
+    -webkit-touch-callout: none;
+    display: flex;
+
+    @m info {
+        .som-segmented-control-item {
+            color: var(--color-info);
+
+            &:active:not(.som-item-current, .som-item-disable) {
+                background-color: var(--info-light-bg);
+            }
+
+            &.som-item-disable {
+                border-color: var(--info-light-bg);
+                color: var(--info-light-bg);
+            }
+
+            &.som-item-current {
+                color: var(--white);
+                background-color: var(--color-info);
+            }
+
+            &.som-item-current.som-item-disable {
+                background-color: var(--info-button-disable);
+                color: var(--info-button-bg);
+            }
+
+            &.som-item-middle,
+            &.som-item-first,
+            &.som-item-last {
+                border-color: var(--color-info);
+            }
+        }
+    }
+
+    @m warn {
+        .som-segmented-control-item {
+            color: var(--color-warn);
+
+            &:active:not(.som-item-current, .som-item-disable) {
+                background-color: var(--warn-light-bg);
+            }
+
+            &.som-item-disable {
+                border-color: var(--warn-light-bg);
+                color: var(--warn-light-bg);
+            }
+
+            &.som-item-current {
+                color: var(--white);
+                background-color: var(--color-warn);
+            }
+
+            &.som-item-current.som-item-disable {
+                background-color: var(--warn-button-disable);
+                color: var(--warn-button-bg);
+            }
+
+            &.som-item-middle,
+            &.som-item-first,
+            &.som-item-last {
+                border-color: var(--color-warn);
+            }
+        }
+    }
+
+    @m success {
+        .som-segmented-control-item {
+            color: var(--success);
+
+            &:active:not(.som-item-current, .som-item-disable) {
+                background-color: var(--success-light-bg);
+            }
+
+            &.som-item-disable {
+                border-color: var(--success-button-disable);
+                color: var(--success-light-bg);
+            }
+
+            &.som-item-current {
+                color: var(--white);
+                background-color: var(--success);
+            }
+
+            &.som-item-current.som-item-disable {
+                background-color: var(--success-button-disable);
+                color: var(--success-button-bg);
+            }
+
+            &.som-item-middle,
+            &.som-item-first,
+            &.som-item-last {
+                border-color: var(--success);
+            }
+        }
+    }
+
+    @m error {
+        .som-segmented-control-item {
+            color: var(--color-error);
+
+            &:active:not(.som-item-current, .som-item-disable) {
+                background-color: var(--error-light-bg);
+            }
+
+            &.som-item-disable {
+                border-color: var(--error-light-bg);
+                color: var(--error-light-bg);
+            }
+
+            &.som-item-current {
+                color: var(--white);
+                background-color: var(--color-error);
+            }
+
+            &.som-item-current.som-item-disable {
+                background-color: var(--error-button-disable);
+                color: var(--error-button-bg);
+            }
+
+            &.som-item-middle,
+            &.som-item-first,
+            &.som-item-last {
+                border-color: var(--color-error);
+            }
+        }
+    }
+}
+
+@c segmented-control-item {
+    position: relative;
+    flex: 1;
+    box-sizing: border-box;
+    height: var(--segmented-control-height);
+    font-size: 14px;
+    line-height: var(--segmented-control-height);
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--white);
+    color: var(--primary);
+    -webkit-tap-highlight-color: rgba(255,0,0,0);
+
+    &::after {
+        background-clip: padding-box;
+        box-sizing: border-box;
+    }
+
+    &.small {
+        padding: 4px;
+        flex: none;
+        height: auto;
+        line-height: 10px;
+        font-size: 10px;
+    }
+
+    &.som-item-last {
+        border-top-right-radius: var(--border-radius-normal);
+        border-bottom-right-radius: var(--border-radius-normal);
+        border: var(--border-primary);
+
+        &.small {
+            border-top-right-radius: var(--border-radius-small);
+            border-bottom-right-radius: var(--border-radius-small);
+        }
+
+    }
+
+    &.som-item-first {
+        &.small { 
+            border-top-left-radius: var(--border-radius-small);
+            border-bottom-left-radius: var(--border-radius-small);
+        }
+        border-top-left-radius: var(--border-radius-normal);
+        border-bottom-left-radius: var(--border-radius-normal);
+        border: var(--border-primary);
+        border-right: none;
+    }
+
+    &.som-item-current {
+        color: var(--text-anti);
+        background-color: var(--primary);
+    }
+
+    &.som-item-middle {
+        border: var(--border-primary);
+        border-right: none;
+    }
+
+    &.som-item-disable {
+        border-color: var(--segmented-control-disable-border);
+        color: var(--segmented-control-disable-color);
+    }
+
+    &.som-item-current.som-item-disable {
+        background-color: var(--segmented-control-disable-bg);
+        border-color: var(--segmented-control-disable-bg);
+        color: var(--segmented-control-disable-select-color);
+    }
+}

@@ -1,0 +1,71 @@
+/* tag-group.css */
+
+@c tag-group {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    
+    .som-tag {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    @m three {
+        padding-left: 8px;
+        .som-tag {
+            margin-right: 8px;
+        }
+    }
+
+    @m three-column {
+        padding-left: 16px;
+        padding-right: 8px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .som-tag {
+            margin-right: 8px;
+            box-sizing: border-box;
+            width: calc(33.3% -8px);
+            text-align: center;
+        }
+
+    }
+
+    @m four-column {
+        padding-left: 16px;
+        padding-right: 8px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .som-tag {
+            margin-right: 8px;
+            width: calc(25% - 8px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+    }
+
+    @m seven-column {
+        display: flex;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        flex-wrap: wrap;
+        .som-tag {
+            margin-top: 15px;
+            padding: 0;
+            margin-right: 15px;
+            width: calc(14% -15px);
+            box-sizing: border-box;
+            text-align: center;
+        }
+    }
+
+    @m seven {
+        padding-left: 15px;
+        padding-bottom: 15px;
+        .som-tag {
+            margin-top: 15px;
+            margin-right: 15px;
+        }
+    }
+}

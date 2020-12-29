@@ -1,0 +1,72 @@
+/* keyboard.css */
+@c keyboard {
+    .som-keyboard--content {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        background: #e3e4e6;
+        user-select: none;
+        padding-bottom: 2px;
+    }
+    
+    .som-keyboard--content .h38 {
+        height: 38px;
+        background: #e3e4e6;
+    }
+    .som-keyboard--title {
+        height: 44px;
+        line-height: 44px;
+        text-align: right;
+        font-size: 16px;
+        color: #ff571a;
+        background: #f7f8fa;
+        margin: 2px 0;
+    }
+    
+    .som-keyboard--title span {
+        margin-right: 2%;
+    }
+    
+    .som-keyboard--keys {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: stretch;
+        flex-direction: row;
+        width: 98%;
+        margin: 0 auto;
+        padding: 0 2px;
+    }
+    .som-keyboard--keys--item {
+        background: #fff;
+        list-style: none;
+        border-radius: 8px;
+        text-align: center;
+    }
+    .som-keyboard--keys--item__number {
+        width: 32%;
+        height: 49px;
+        margin: 2px 0;
+        font-size: 24px;
+        line-height: 49px;
+        
+    }
+    .som-keyboard--keys.som-keyboard--keys__number li {
+        background: #fff;
+    }
+    .som-keyboard--keys.som-keyboard--keys__number li:active ,
+    .som-keyboard--keys.som-keyboard--keys__number li.active {
+        background: #acb4be;
+    }
+    
+    .som-keyboard--keys.som-keyboard--keys__number li.del {
+        background: #acb4be;
+    }
+    
+    .som-keyboard--keys.som-keyboard--keys__number li.del:active,
+    .som-keyboard--keys.som-keyboard--keys__number li.del.active {
+        background: #fff;
+    }
+}

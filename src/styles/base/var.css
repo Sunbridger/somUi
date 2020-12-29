@@ -1,0 +1,156 @@
+@import 'lemon/less/theme/default.css';
+:root {
+    /* Transition
+    -------------------------- */
+    --all-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    --fade-linear-transition: opacity 200ms linear;
+    --md-fade-transition: transform 300ms cubic-bezier(.23, 1, .32, 1) 100ms, opacity 300ms cubic-bezier(.23, 1, .32, 1) 100ms;
+    --border-transition-base: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    --color-transition-base: color .2s cubic-bezier(.645, .045, .355, 1);
+    --background-color-transition-base: background-color .2s cubic-bezier(.645, .045, .355, 1);
+    /* colors
+    -------------------------- */
+    --color-modal: #000000bf;
+    --color-info: var(--link);
+    --color-error: var(--warning);
+    --color-warn: #f90;
+    --info-light-bg: rgba(77, 166, 255, .1);
+    --info-button-bg: rgba(77, 166, 255, .8);
+    --info-button-disable: rgba(77, 166, 255, .5);
+    --success-light-bg: rgba(29, 191, 110, .1);
+    --success-button-bg: rgba(29, 191, 110, .8);
+    --success-button-disable: rgba(29, 191, 110, .5);
+    --error-light-bg: #ffedeb;
+    --error-button-bg: rgba(255, 64, 64, .8);
+    --error-button-disable: rgba(255, 64, 64, .5);
+    --warn-light-bg: rgba(255, 153, 0, .08);
+    --warn-button-bg: rgba(255, 153, 0, .15);
+    --warn-button-disable: rgba(255, 153, 0, .4);
+    --color-light-gray: #d7d8db;
+    /* border
+    -------------------------- */
+    --border-radius-small: 2px;
+    --border-radius-normal: 4px;
+    --border-primary: 1px solid var(--primary);
+    --border-dark: 1px solid var(--line-b);
+    --border-light-dark: 1px solid var(--line-c);
+    /* box-shadow
+    -------------------------- */
+    --fixed-box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
+    --tap-box-shadow: 0 -2px 8px rgba(0, 0, 0, .08);
+    /* z-index
+    -------------------------- */
+    --index-normal: 1;
+    --index-back-top: 10;
+    --index-top: 1000;
+    --index-popper: 2000;
+    /* accordion
+    -------------------------- */
+    --accordion-icon-color: var(--text-hint);
+    /* index-list
+    -------------------------- */
+    --index-tips-fill-color: rgba(27, 28, 51, .9);
+    /* nav-bar
+    -------------------------- */
+    --nav-bar-fill-font-color: var(--text-anti);
+    /* button
+    -------------------------- */
+    --button-font-color: var(--text-anti);
+    --button-margin-top: 15px;
+    --button-height: 32px;
+    --button-mini-heigth: 24px;
+    --button-large-heigth: 40px;
+    --button-font-size: 14px;
+    --button-mini-font-size: 12px;
+    --button-large-font-size: 16px;
+    --button-default-disabled-color: #d7d8db;
+    --button-gray-disabled-color: #d7d8db;
+    --button-primary-bg: var(--primary);
+    --button-primary-active-bg: var(--primary-press);
+    --button-primary-disabled-bg: var(--primary-disable);
+    --button-primary-disabled-color: var(--primary-disable-select-color);
+    --button-plain-primary-color: var(--primary);
+    --button-plain-primary-border-color: var(--primary);
+    --button-plain-primary-active-color: var(--primary-press);
+    --button-plain-primary-active-border-color: var(--primary-press);
+    --button-plain-primary-disable-color: var(--primary-disable);
+    /* list
+    -------------------------- */
+    --list-height: 44px;
+    --list-font-size: 16px;
+    --list-item-line-height: 1;
+    --list-item-desc-color: var(--text-caption);
+    --list-item-icon-color: var(--line-b);
+    --list-item-disabled-color: var(--text-caption);
+    --list-item-disabled-icon-color: #e2e2e2;
+    --list-item-link-color: var(--primary);
+    /* switch
+    -------------------------- */
+    --switch-height: 32px;
+    --switch-label-width: 105px;
+    --switch-checked-border: var(--primary);
+    --switch-checked-bg: var(--primary);
+    /* radio
+    -------------------------- */
+    --radio-button-inner-radius: 22px;
+    /* loading
+    -------------------------- */
+    --loading-fill: var(--text-title);
+    /* toast
+    -------------------------- */
+    --toast-icon-size: 36px;
+    --toast-bg: rgba(27, 28, 51, .9);
+    /* action-sheet
+    -------------------------- */
+    --action-sheet-active-bgcolor: #ececec;
+    --action-sheet-border: #efefef;
+    /* progress
+    -------------------------- */
+    --progress-height: 5px;
+    /* modal
+    -------------------------- */
+    --modal-link-active-bg: #eee;
+    /* tabs
+    -------------------------- */
+    --tabs-disabled-color: #ddd;
+    /* tab-bar
+    -------------------------- */
+    --tab-bar-text-active-color: var(--primary);
+    /* tips
+    -------------------------------- */
+    --tips-guide-border: #ffc61a;
+    --tips-arrow-size: 6px;
+    /* picker
+    -------------------------- */
+    --picker-toolbar-topline: #c1c2c4;
+    /* checkbox
+    -------------------------- */
+    --checkbox-icon-active-color: var(--text-anti);
+    /* tag
+    -------------------------- */
+    --tag-primary-bg: var(--primary-selected);
+    /* segmented-control
+    -------------------------- */
+    --segmented-control-height: 30px;
+    --segmented-control-disable-bg: var(--primary-disable);
+    --segmented-control-disable-border: var(--primary-disable);
+    --segmented-control-disable-color: var(--primary-disable);
+    --segmented-control-disable-select-color: var(--primary-disable-select-color);
+    /* flow
+    -------------------------- */
+    --flow-active-color: var(--text-anti);
+    /* search-bar
+    -------------------------- */
+    --search-bar-label-color: #afb2ba;
+    /* Table
+    -------------------------- */
+    --table-header-background: #f4f5f7;
+    --table-header-color: #5e5e66;
+    --table-expand-cell-shadow: #f4f4f4;
+    --table-fixed-shadow: rgba(0, 0, 0, .08);
+    --table-stripe-fill: #f9fafc;
+    --table-border-color: #ededf0;
+    --table-body-color: #1b1c33;
+    --table-hover-background: #f7f8fa;
+    --white: #fff;
+}

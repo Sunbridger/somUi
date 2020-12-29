@@ -1,0 +1,17 @@
+{
+	"name": "@souche-ui/som-table",
+	"version": "4.5.12",
+	"description": "table",
+	"main": "./lib/index.js",
+	"repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/table",
+	"author": "souchefe",
+	"license": "MIT",
+	"files": [
+		"src",
+		"lib",
+		"index.js"
+	],
+	"dependencies": {
+		"@souche-ui/so-ui": "1.6.0"
+	}
+}

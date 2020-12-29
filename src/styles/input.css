@@ -1,0 +1,141 @@
+/* input.css */
+@import "./base/var.css";
+@import "./list-item.css";
+
+@c input {
+
+    input::-webkit-input-placeholder {
+        color: var(--text-hint);
+    }
+    .som-input-placeholder-right input::-webkit-input-placeholder {
+        text-align: right;
+    }
+
+    .som-input-placeholder-center input::-webkit-input-placeholder {
+        text-align: center;
+    }
+
+    @m required {
+        &::before {
+            position: absolute;
+            content: '*';
+            left: -10px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: var(--color-error);
+        }
+    }
+
+    .som-input-icon {
+        font-size: 24px;
+        padding-left: 5px;
+    }
+
+    .som-list-item__hd {
+        padding: 13px 0;
+        font-size: 16px;
+        position: relative;
+    }
+
+    @d label {
+        max-width: 96px;
+        display: inline-block;
+        line-height: 18px;
+        margin-right: 16px;
+        word-break: break-all;
+    }
+
+    .som-list-item__bd {
+        padding: 8px 0;
+
+        &.som-input-right {
+            text-align: right;
+        }
+
+        .input-conect-line {
+            color: var(--text-hint);
+            margin: 0 4px;
+            display: inline-block;
+        }
+    }
+
+    .som-list-item__ft {
+        padding: 0;
+        text-align: right;
+
+        i[class^='som-icon'] {
+            font-size: 24px;
+        }
+
+    }
+
+    @m disabled {
+        .som-list-item__hd,
+        .som-list-item__bd {
+            color: var(--text-caption);
+        }
+
+    }
+
+    @d elm {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        padding-left: 0;
+        -webkit-appearance: none;
+        font-size: inherit;
+        color: inherit;
+        height: 32px;
+        line-height: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &.som-input__elm-tips {
+            &::before {
+                content: '请选择时间';
+            }
+        }
+
+        &:disabled {
+            background-color: var(--white);
+            color: var(--text-caption);
+            opacity: 1;
+        }
+    }
+
+    @d range-number {
+        width: 63px;
+        border: 1px solid var(--text-hint);
+        border-radius: var(--border-radius-normal);
+        text-align: center;
+    }
+
+    @d icon {
+        font-size: 18px;
+        margin-right: 4px;
+
+        &.som-icon-warning {
+            color: var(--color-error);
+        }
+
+        &.som-icon-circle-check {
+            color: var(--success);
+        }
+
+        &.som-icon-circle-close {
+            font-size: 14px;
+            color: var(--text-hint);
+        }
+    }
+}

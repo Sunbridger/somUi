@@ -1,0 +1,18 @@
+{
+  "name": "@souche-ui/som-video-upload",
+  "version": "4.5.12",
+  "description": "video-upload",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/video-upload",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "@souche-f2e/oss-upload": "^1.0.3-beta.8",
+    "vue-video-player": "^5.0.2"
+  }
+}

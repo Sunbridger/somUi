@@ -1,0 +1,30 @@
+/* tips-item.css */
+@import "./mixins/setonepx.css";
+@import "./base/var.css";
+
+@c tips-item {
+    display: flex;
+    padding: 0 16px;
+    line-height: 44px;
+    position: relative;
+    min-width: 130px;
+    box-sizing: border-box;
+    overflow: hidden;
+    
+    tap-highlight-color: rgba(0, 0, 0, 0);
+
+    @d icon {
+        margin-right: 4px;
+    }
+
+    @d text {
+        text-align: left;
+        flex: 1;
+        font-size: 14px;
+    }
+
+    & + &::before {
+        @mixin setTopLine var(--text-body);
+        left: 16px;
+    }
+}

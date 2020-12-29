@@ -1,0 +1,178 @@
+/* modal.css */
+@import "./base/var.css";
+@import "./dialog.css";
+@import "./mixins/mobile.css";
+@import "./mixins/setonepx.css";
+
+@c modal {
+
+    .som-dialog__content {
+        background: #fff;
+        padding-top: 20px;
+        width: 270px;
+    }
+
+    @d title {
+        color: var(--text-title);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        margin-top: -2px;
+        margin-bottom: -2px;
+        padding: 0 16px;
+    }
+
+    .som-modal__body-wrap {
+        max-height: 180px;
+        padding: 0 16px;
+
+        &.need-scroll {
+            overflow-y: auto;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @d bd {
+        margin-top: 14px;
+        padding: 0;
+        font-size: 14px;
+        line-height: 18px;
+        word-wrap: break-word;
+        word-break: break-all;
+        color: var(--text-title);
+        margin-bottom: -2px;
+    }
+
+    .som-modal__bd + .som-prompt {
+        margin-top: 18px;
+    }
+
+    .som-prompt {
+        padding: 0 16px;
+        margin-top: 20px;
+    }
+
+    .som-prompt-msgbox {
+        width: 100%;
+        height: 36px;
+        line-height: 14px;
+        border: 1px solid var(--text-hint);
+        border-radius: var(--border-radius-normal);
+        padding: 0 12px;
+        appearance: none;
+        outline: none;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    @d ft {
+        position: relative;
+        line-height: 44px;
+        font-size: 16px;
+        margin-top: 20px;
+        display: flex;
+        &::after {
+            content: " ";
+            @mixin setTopLine var(--line-b);
+        }
+
+        .som-button {
+            height: 44px;
+            line-height: 44px;
+        }
+        .som-modal-button-mode {
+            flex: 1;
+        }
+    }
+
+    .som-modal__button {
+        border: none;
+        border-radius: 0;
+    }
+
+    @d btn {
+        display: block;
+        flex: 1;
+        text-decoration: none;
+        position: relative;
+        @mixin setTapColor rgba(0,0,0,0);
+
+        &:active {
+            background-color: var(--modal-link-active-bg);
+        }
+        
+        &::after {
+            content: " ";
+            @mixin setLeftLine var(--line-b);
+        }
+
+        &:first-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .som-skin_android {
+
+        &.som-dialog__content {
+            text-align: left;
+            box-shadow: var(--fixed-box-shadow);
+        }
+
+        .som-modal__hd {
+            text-align: left;
+        }
+        .som-modal__bd {
+            color: var(--text-title);
+            padding: 8px 16px 0 16px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .som-modal__ft {
+            display: block;
+            text-align: right;
+            line-height: 42px;
+            font-size: 16px;
+            padding: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+        .som-modal__btn {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 16px;
+
+            &::after {
+                display: none;
+            }
+    
+            &:active {
+                background-color: rgba(0,0,0,.06);
+            }
+            &:visited {
+                background-color: rgba(0,0,0,.06);
+            }
+        }
+
+        .som-modal__btn_default {
+            color: #808080;
+        }
+    }
+
+    .som-modal__btn_default {
+        color: var(--text-title);
+    }
+    .som-modal__btn_primary {
+        color: var(--primary);
+    }
+    .som-modal__btn_warn {
+        color: var(--line-b);
+    }
+
+}

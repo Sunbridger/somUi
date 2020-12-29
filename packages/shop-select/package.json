@@ -1,0 +1,14 @@
+{
+  "name": "@souche-ui/som-shop-select",
+  "version": "4.5.12",
+  "description": "shop-select",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/shop-select",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ]
+}

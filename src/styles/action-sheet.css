@@ -1,0 +1,166 @@
+/* action-sheet.css */
+@import "./base/var.css";
+@import "./mixins/setonepx.css";
+
+@c action-sheet {
+
+    .som-actionsheet-mask-enter,
+    .som-actionsheet-mask-leave-active,
+    .som-android-actionsheet-enter,
+    .som-android-actionsheet-leave-active {
+        opacity: 0;
+    }
+    .som-actionsheet-mask-leave-active,
+    .som-actionsheet-mask-enter-active,
+    .som-android-actionsheet-leave-active,
+    .som-android-actionsheet-enter-active {
+        transition: opacity 300ms!important;
+    }
+
+    .som-mask {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .75);
+    } 
+    
+    .som-mask_transparent {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    .som-actionsheet {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        transform: translate(0, 100%);
+        backface-visibility: hidden;
+        z-index: 5000;
+        width: 100%;
+        background-color: var(--background-page);
+
+        /*slide up animation */
+        transition: transform .3s;
+
+       
+    }
+
+    .som-actionsheet__menu {
+        background-color: var(--white);
+    }
+
+    .som-actionsheet__action {
+        margin-top: 12px;
+        background-color: var(--white);
+        color: var(--text-title);
+        border-bottom: 1px solid var(--action-sheet-border);
+    }
+
+    .som-actionsheet__cell {
+        position: relative;
+        padding: 16px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1;
+        &::before {
+            @mixin setTopLine var(--line-b);
+        }
+        &:active {
+            background-color: var(--action-sheet-active-bgcolor);
+        }
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    .som-actionsheet__header {
+        padding: 0 16px;
+        color: var(--text-caption);
+        font-size: 14px;
+        line-height: 16px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* android actionSheet */
+
+    @d android {
+        .som-actionsheet {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            width: 274px;
+            box-sizing: border-box;
+            backface-visibility: hidden;
+            background: transparent;
+            transition: transform .3s;
+
+            .som-actionsheet__action {
+                display: none;
+            }
+
+            .som-actionsheet__menu {
+                border-radius: var(--border-radius-small);
+            }
+
+            .som-actionsheet__cell {
+                padding: 13px 24px;
+                font-size: 16px;
+                line-height: 1.4;
+                text-align: left;
+                &:first-child {
+                    border-top-left-radius: 2px;
+                    border-top-right-radius: 2px;
+                }
+                &:last-child {
+                    border-bottom-left-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                }
+            }
+
+        }
+       
+    }
+
+    .som-actionsheet-menu-primary {
+        color: var(--primary);
+    }
+    .som-actionsheet-menu-warn {
+        color: var(--color-warn);
+    }
+    .som-actionsheet-menu-info {
+        color: var(--color-info);
+    }
+    .som-actionsheet-menu-error {
+        color: var(--color-error);
+    }
+    .som-actionsheet-menu-success {
+        color: var(--success);
+    }
+    .som-actionsheet-menu-default {
+        color: var(--text-title);
+    }
+    .som-actionsheet-menu-disabled {
+        color: var(--text-hint);
+    }
+
+    /* actionSheet aniamtion */
+    .som-actionsheet_toggle {
+        transform: translate(0, 0);
+    }
+
+}

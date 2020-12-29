@@ -1,0 +1,20 @@
+{
+    "presets": [["es2015", { "loose": true }]],
+    "plugins": ["transform-vue-jsx"],
+    "env": {
+        "test": {
+            "plugins": ["istanbul"]
+        },
+        "utils": {
+            "plugins": [
+                ["module-resolver", {
+                    "root": ["som-ui"],
+                    "alias": {
+                        "som-ui/src": "@souche-ui/som-ui/lib",
+                        "components": "@souche-ui/som-ui/lib"
+                    }
+                }]
+            ]
+        }
+    }
+}

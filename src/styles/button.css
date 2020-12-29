@@ -1,0 +1,226 @@
+/* button.css */
+@import "./base/var.css";
+@import "./mixins/mobile.css";
+@import "./mixins/button.css";
+
+@c button {
+    width: 100%;
+    border-width: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    position: relative;
+    display: block;
+    padding: 0 14px;
+    font-size: var(--button-font-size);
+    text-align: center;
+    text-decoration: none;
+    color: var(--button-font-color);
+    line-height: 30px;
+    height: var(--button-height);
+    border-style: solid;
+    border-radius: var(--border-radius-normal);
+    @mixin setTapColor rgba(0, 0, 0, 0);
+    overflow: hidden;
+
+    @m small-border {
+        &::after {
+            content: " ";
+            width: 200%;
+            height: 200%;
+            position: absolute;
+            transform: scale(.5);
+            transform-origin: 0 0;
+            top: 0;
+            left: 0;
+            border: var(--border-dark);
+            box-sizing: border-box;
+            border-radius: calc(var(--border-radius-normal) * 2);
+        }
+
+        &.som-button--default {
+            border-width: 0;
+        }
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    @m icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @m mini {
+        width: auto;
+        display: inline-block;
+        padding: 0 10px;
+        line-height: 22px;
+        height: var(--button-mini-heigth);
+        font-size: var(--button-mini-font-size);
+    }
+
+    @m large {
+        padding: 0 10px;
+        line-height: 38px;
+        height: var(--button-large-heigth);
+        font-size: var(--button-large-font-size);
+    }
+
+    @m warn {
+        @mixin button-type var(--warn-button-bg), var(--white), var(--color-warn);
+        &::after {
+            border-width: 0;
+        }
+    }
+
+    @m gray {
+        @mixin button-type var(--background-page), var(--text-title), #e3e4e6;
+        &::after {
+            border-width: 0;
+        }
+    }
+
+    @m info {
+        @mixin button-type var(--info-button-bg), var(--white), var(--color-info);
+        &::after {
+            border-width: 0;
+        }
+    }
+    @m success {
+        @mixin button-type var(--success-button-bg), var(--white), var(--success);
+        &::after {
+            border-width: 0;
+        }
+    }
+    @m error {
+        @mixin button-type var(--error-button-bg), var(--white), var(--color-error);
+        &::after {
+            border-width: 0;
+        }
+    }
+
+    @m primary {
+        @mixin button-type var(--button-primary-bg), var(--button-font-color), var(--button-primary-active-bg);
+        &::after {
+            border-width: 0;
+        }
+    }
+
+    & + & {
+        margin-top: var(--button-margin-top);
+    }
+
+    .som-icon {
+        font-size: 24px;
+        margin-right: 6px;
+    }
+
+
+    @m default {
+        border-width: 1px;
+        border-color: #d7d8db;
+        color: var(--text-title);
+        background-color: #fff;
+        &:not(.som-button--disabled):visited {
+            color: var(--text-title);
+        }
+        &:not(.som-button--disabled):active {
+            color: var(--text-title);
+            background-color: var(--press);
+        }
+    }
+
+    @m plain {
+        @m primary {
+            @mixin button-plain-type var(--primary-text), var(--button-plain-primary-border-color),
+                var(--text-anti), var(--button-plain-primary-active-border-color), var(--primary);
+        }
+
+        @m default {
+            @mixin button-plain-type var(--text-title), var(--text-hint),
+                var(--text-hint), var(--line-b);
+        }
+
+        @m gray {
+            @mixin button-plain-type var(--text-title), var(--text-hint),
+                var(--background-page), var(--background-page);
+        }
+
+        @m info {
+            @mixin button-plain-type var(--color-info), var(--color-info),
+                var(--info-button-disable), var(--info-button-disable);
+        }
+
+        @m warn {
+            @mixin button-plain-type var(--color-warn), var(--color-warn),
+                var(--warn-button-disable), var(--warn-button-disable);
+        }
+
+        @m success {
+            @mixin button-plain-type var(--success), var(--success),
+                var(--success-button-disable), var(--success-button-disable);
+        }
+
+        @m error {
+            @mixin button-plain-type var(--color-error), var(--color-error),
+                var(--error-button-disable), var(--error-button-disable);
+        }
+    }
+    &.som-button--plain-disabled {
+        color: rgba(0,0,0,.2);
+        border-color: rgba(0,0,0,.2);
+        &.som-button--plain--primary {
+            color: var(--button-plain-primary-disable-color);
+            border-color: var(--button-plain-primary-disable-color);
+        }
+    }
+
+    &.som-button--plain--default::after,
+    &.som-button--plain--primary::after,
+    &.som-button--plain--info::after,
+    &.som-button--plain--warn::after,
+    &.som-button--plain--error::after,
+    &.som-button--plain--success::after {
+        border-width: 0;
+    }
+
+    &.som-button--primary::after,
+    &.som-button--info::after,
+    &.som-button--warn::after,
+    &.som-button--error::after,
+    &.som-button--success::after {
+        border-width: 0;
+    }
+
+    @m disabled {
+        &.som-button--default {
+            color: var(--button-default-disabled-color);
+            background-color: var(--white);
+        }
+        &.som-button--primary {
+            color: var(--button-primary-disabled-color);
+            background-color: var(--button-primary-disabled-bg);
+        }
+        &.som-button--gray {
+            color: var(--button-gray-disabled-color);
+        }
+        &.som-button--warn {
+            background-color: var(--warn-button-disable);
+        }
+        &.som-button--info {
+            background-color: var(--info-button-disable);
+        }
+        &.som-button--success {
+            background-color: var(--success-button-disable);
+        }
+        &.som-button--error {
+            background-color: var(--error-button-disable);
+        }
+    }
+
+    &.som-button-no-border::after {
+        display: none;
+    }
+}

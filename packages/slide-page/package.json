@@ -1,0 +1,31 @@
+{
+  "name": "@souche-ui/som-slide-page",
+  "version": "4.5.12",
+  "description": "slide-page",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build:file": "node build/bin/icon-init & node build/bin/build-entry & node build/bin/build-example-entry & node build/bin/root-css & node build/bin/version",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js,components",
+    "build:style": "gulp build --gulpfile build/build-style.js",
+    "build:packages": "cross-env NODE_ENV=production node build/build-all.js",
+    "build": "npm run clean && npm run build:file && npm run lint && cross-env NODE_ENV=production webpack --config build/webpack.component.js --config build/webpack.common.js --config build/webpack.umd.js --config build/webpack.example.js && npm run build:utils && npm run build:style && npm run build:packages",
+    "dev": "npm run build:file && webpack-dev-server --host 0.0.0.0 --config build/webpack.example.js",
+    "lint": "eslint --format node_modules/eslint-friendly-formatter . --quiet --ext .vue,.js",
+    "clean": "rimraf lib && rimraf test/**/coverage",
+    "deploy": "sh build/deploy.sh",
+    "deploy:build": "npm run build:file && cross-env NODE_ENV=production webpack --config build/webpack.example.js",
+    "pub": "sh build/release.sh",
+    "test": "npm run lint && cross-env NODE_ENV=test karma start test/unit/karma.conf.js --single-run",
+    "test:watch": "karma start test/unit/karma.conf.js",
+    "clog": "clog changelog",
+    "init": "lerna bootstrap"
+  },
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/slide-page",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ]
+}

@@ -1,0 +1,175 @@
+/* shop-select.css */
+:root {
+    --background-page: #f2f3f5;
+    --text-title: #1b1c33;
+    --text-body: #5e5e66;
+}
+
+@c shop-select {
+    height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    background-color: var(--background-page);
+    top: 0;
+
+    .all--selected {
+        color: #ff571a;
+        color: var(--primary);
+    }
+
+    @m multipleflat {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .multiple-flat {
+            flex: 1;
+            overflow: auto;
+            padding-bottom: 32px;
+    
+            .multiple-group-title {
+                line-height: 28px;
+                margin: 0;
+                padding: 0 16px;
+            }
+        }
+    }
+
+    .multiple-frist-level {
+        padding-bottom: 54px;
+    }
+
+    .city-all-shop--selected .city-all-label,
+    .shop--selected, {
+        color: #ff571a;
+        color: var(--primary);
+    }
+
+    .city-all-shop--selected .shop--selected {
+        color: var(--text-title);
+    }
+
+    .som-index-list__content {
+        padding-bottom: 28px;
+    }
+
+    .som-index-list__content .som-list__title,
+    .som-list__title {
+        color: #666;
+        margin: 0;
+        line-height: 12px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    @d popup {
+        .som-popup-dialog {
+            background-color: #fff;
+            box-shadow: 1px 1px 10px 4px #ccc;
+            height: 100vh;
+        }
+        
+        .right-content {
+            flex: 1;
+            background-color: var(--background-page);
+            
+            &.sing-city-mult {
+                height: 100%;
+                background-color: #fff;
+                overflow-y: auto;
+            }
+
+            .som-checkbox-group {
+                background-color: var(--background-page);
+                .som-checkbox {
+                    position: relative;
+                }
+                .som-checkbox:nth-child(2)::after {
+                    content: '';
+                    height: 1px;
+                    bottom: 0;
+                    position: absolute;
+                    width: 100%;
+                    left: 16px;
+                    background: #dcdcdc;
+                    transform: scaleY(.5);
+                }
+            }
+
+            .som-white-space {
+                background: #fff;
+            }
+
+
+            .right-shop-area {
+                line-height: 48px;
+                background-color: #fff;
+                color: var(--text-title);
+                font-size: 16px;
+                text-align: center;
+                position: relative;
+                padding: 0 16px;
+        
+                &::after {
+                    content: '';
+                    height: 1px;
+                    bottom: 0;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    background: #dcdcdc;
+                    transform: scaleY(.5);
+                }
+            }
+
+            .city-all-shop--selected .city-all-label,
+            .shop--selected, {
+                color: #ff571a;
+                color: var(--primary);
+            }
+        
+            .city-all-shop--selected .shop--selected {
+                color: var(--text-title);
+            }
+
+            .popup-back {
+                position: absolute;
+                left: 16px;
+
+                & + span {
+                    font-weight: bold;
+                }
+            }
+        }
+        .multiple-tool-single {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            bottom: constant(safe-area-inset-bottom);
+            bottom: env(safe-area-inset-bottom);
+        }
+    }
+
+    .multiple-tool-fixed {
+        position: fixed;
+        z-index: 1000;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .multiple-tool {
+    }
+
+}
+
+.som-list__title {
+    color: var(--text-body);
+    margin: 0;
+    line-height: 12px;
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+

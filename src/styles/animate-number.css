@@ -1,0 +1,23 @@
+@c animate-number-wrap {
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+
+    @d each-num {
+        overflow: hidden;
+        display: inline-block;
+    }
+    @d ul {
+        overflow: hidden;
+        width: .62em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    @d li {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}   

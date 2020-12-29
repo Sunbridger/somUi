@@ -1,0 +1,18 @@
+{
+    "name": "@souche-ui/som-image-viewer",
+    "version": "4.5.12",
+    "description": "som-image-viewer",
+    "main": "./lib/index.js",
+    "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/som-image-viewer",
+    "author": "souchefe",
+    "license": "MIT",
+    "files": [
+        "src",
+        "lib",
+        "index.js"
+    ],
+    "dependencies": {
+        "object-assign": "^4.1.1",
+        "x-photoswipe": "^4.1.3-rc.1"
+    }
+}

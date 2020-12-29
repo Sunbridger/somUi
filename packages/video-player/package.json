@@ -1,0 +1,17 @@
+{
+  "name": "@souche-ui/som-video-player",
+  "version": "4.3.1",
+  "description": "视频播放组件",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/video-player",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "es6-promise": "^4.2.4"
+  }
+}

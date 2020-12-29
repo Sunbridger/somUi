@@ -1,0 +1,162 @@
+/* filter.css */
+@import "./base/var.css";
+@import "./mixins/setonepx.css";
+@import "./mixins/mobile.css";
+
+@c filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    height: 100%;
+    position: fixed;
+    
+    .som-mask {
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .4);
+    }
+
+    @d select {
+        display: flex;
+        background-color: var(--white);
+        & > div {
+            flex: 1;
+        }
+    }
+
+    @d options {
+        width: 100%;
+        &.options-group {
+            flex: 1;
+        }
+
+        &.options-tag {
+            box-sizing: border-box;
+            background-color: var(--white);
+            position: relative;
+            padding-bottom: 60px;
+            
+            &::after {
+                @mixin setTopLine var(--line-b);
+            }
+
+            .group-title {
+                padding: 0 8px;
+                font-size: 12px;
+                margin-top: 16px;
+            }
+
+            .filter-content-one {
+                padding: 0 8px;
+                margin-top: 6px;
+                margin-bottom: 25px;
+            }
+
+            .filter-content {
+                padding: 0 8px;
+            }
+
+            .filter-toolip {
+                position: absolute;
+                box-sizing: border-box;
+                bottom: 0;
+                width: 100%;
+            }
+
+        }
+    }
+    
+}
+
+@c filter-item {
+    flex: 1;
+    line-height: 44px;
+    position: relative;
+    transition: var(--all-transition);
+    @mixin setTapColor rgba(0, 0, 0, 0);
+
+    &:active {
+        background-color: rgba(0, 0, 0, .1);;
+    }
+
+    @m on {
+        .som-filter-item__content {
+            .text,
+            .icon {
+                color: var(--primary);
+
+                sup {
+                    border-color: var(--primary);
+                }
+            }
+        }
+    }
+
+    &:last-child {
+        .som-filter-item__content::after {
+            display: none;
+        }
+    }
+
+    @d content {
+        display: flex;
+        justify-content: center;
+        color: var(--text-caption);
+
+        &.fill {
+            color: var(--text-title);
+        }
+
+        .text {
+            white-space: nowrap;
+            font-size: 14px;
+            position: relative;
+
+            sup {
+                height: 12px;
+                border-radius: 6px;
+                font-size: 10px;
+                line-height: 12px;
+                border: 1px solid var(--text-caption);
+                padding: 0 3px;
+                position: absolute;
+                top: 5px;
+                text-align: center;
+
+                &.single {
+                    width: 12px;
+                    padding: 0;
+                }
+            }
+        }
+
+        .icon {
+            margin-left: 4px;
+            display: flex;
+            align-items: center;
+
+            .som-select-down {
+                transform: matrix(.71, .71, -.71, .71, 0, 0) rotate(-45deg);
+                transition: transform 300ms;
+            }
+    
+            .som-select-up {
+                transform: matrix(.71, .71, -.71, .71, 0, 0) rotate(135deg);
+                transition: transform 300ms;
+            }
+        }
+            
+    }
+}
+
+.som-filter-animate-top-enter,
+.som-filter-animate-top-leave-active {
+    transition-property: transform;
+    transition-duration: 300ms;
+    transform: translate3d(0, -80%, 0);
+}

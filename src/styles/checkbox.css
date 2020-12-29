@@ -1,0 +1,131 @@
+/* checkbox.css */
+@import "./base/var.css";
+@import "./list-item.css";
+
+@c checkbox {
+    transition: var(--all-transition);
+
+    .som-checkbox__title + .som-list-item {
+        &::before {
+            display: none;
+        }
+    }
+    
+
+    @d title {
+        padding: 8px 16px;
+        font-size: 12px;
+        line-height: 12px;
+        color: var(--text-caption);
+    }
+   
+    @d label {
+        background-color: var(--white);
+
+        &.som-checklist-label-left {
+            flex-direction: row-reverse;
+        }
+
+        &.som-checkbox-label-disable {
+            .som-check {
+                & + .checkbox-icon {
+                    background-color: var(--background-block);
+                    color: var(--background-block);
+                }
+                &:checked + .checkbox-icon {
+                    background-color: var(--text-hint);
+                    border-color: var(--text-hint);
+                    i {
+                        color: var(--white);
+                    }
+                }
+            }
+
+            .som-list-item__bd {
+                color: var(--text-caption);
+            }
+        }
+    }
+
+    .som-check {
+        position: absolute;
+        left: -9999em;
+        & + .checkbox-icon {
+            border: 1px solid var(--text-hint);
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 16px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        &:checked + .checkbox-icon {
+            background-color: var(--primary);
+            border-color: var(--primary);
+
+            i {
+                color: var(--checkbox-icon-active-color);
+            }
+        }
+    }
+
+    .som-list-item__hd {
+        margin-right: 12px;
+        display: flex;
+    }
+
+    .som-list-item__bd {
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    @m horizontal {
+        background-color: var(--white);
+        .som-checkbox-wrap {
+            margin: 14px 0 0 0;
+        }
+
+        .som-list-item__hd {
+            width: 96px;
+        }
+
+        .som-list-item__ft {
+            width: auto;
+            float: left;
+            display: table;
+            vertical-align: middle;
+            padding: 0;
+            line-height: 16px;
+            margin-bottom: 14px;
+            font-size: 16px;
+            position: relative;
+            color: var(--text-title);
+            
+            .som-check {
+                width: 100%;
+                height: 100%;
+                z-index: 5;
+                opacity: 0;
+                left: 0;
+            }
+
+            .checkbox-icon {
+                display: table-cell;
+            }
+        }
+
+        .som-list-item__ft.som-list-item__ft {
+            margin-right: 16px;
+            
+        }
+
+        .som-checkbox-label {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 4px;
+        }
+    }
+}

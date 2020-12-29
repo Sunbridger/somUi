@@ -1,0 +1,14 @@
+{
+  "name": "@souche-ui/som-carousel",
+  "version": "4.5.12",
+  "description": "carousel",
+  "main": "./lib/index.js",
+  "repository": "http://git.souche.com/souche-ui/som-ui/tree/master/packages/carousel",
+  "author": "souchefe",
+  "license": "MIT",
+  "files": [
+    "src",
+    "lib",
+    "index.js"
+  ]
+}
